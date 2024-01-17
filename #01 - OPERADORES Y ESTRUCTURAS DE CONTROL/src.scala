@@ -16,8 +16,21 @@ object Main {
         println(s"El resto de la division entre $a y $b es igual a $modulo")
         println("")
 
-
         // Operadores Relacionales
+        println("OPERADORES RELACIONALES")
+        val igualdad = a == b
+        println(s"¿ Son iguales $a y $b ? RTA -> $igualdad")
+        val diferencia = a != b
+        println(s"¿ Son diferentes $a y $b ? RTA -> $diferencia")
+        val mayor = a > b
+        println(s"¿ $a es mayor a $b ? RTA -> $mayor")
+        val menor = a < b
+        println(s"¿ $a es menor a $b ? RTA -> $menor")
+        val menorIgual = a <= b
+        println(s"¿ $a es menor e igual a $b ? RTA -> $menorIgual")
+        val mayorIgual = a >= b
+        println(s"¿ $a es mayor e igual a $b ? RTA -> $mayorIgual")
+        print("")
 
         // Operadores de Asignacion
 
