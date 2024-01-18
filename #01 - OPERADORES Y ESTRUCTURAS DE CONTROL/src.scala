@@ -96,6 +96,19 @@ object Main {
         println(s"¿$element esta en el conjunto? RTA->${my_set(element)}\n")
 
         // Operadores de Identidad
+        println("""OPERADORES DE IDENTIDAD
+                    En Scala no hay operadores de este tipo,
+                    Pero existen un metodo denominado eq
+                    que es equivalente al operador is de Python
+                """)
+        val d = List(1, 2, 3)
+        val e = List(1, 2, 3)
+        val f = d
+        println(s"¿${d.toString} es el mismo objeto que ${e.toString}? RTA->${d eq e}")
+        println(s"¿${d.toString} es el mismo objeto que ${f.toString}? RTA->${d eq f}\n")
+        
+        // Operadores Bit a Bit
+        
 
         // Estructuras de Control
 
