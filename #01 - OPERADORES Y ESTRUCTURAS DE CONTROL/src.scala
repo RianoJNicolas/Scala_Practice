@@ -62,6 +62,24 @@ object Main {
         println(s"Esta operacion da como resultado $x \n")
 
         // Operadores Logicos
+        val A = true
+        val B = false
+        println("OPERADORES LOGICOS")
+        // AND
+        println(s"$A and $B = ${A && B}")
+        println(s"$B and $A = ${B && A}")
+        println(s"$A and $A = ${A && A} \n")
+
+        // OR
+        println(s"$B or $A = ${B || A}")
+        println(s"$A or $B = ${A || B}")
+        println(s"$A or $A = ${A || A}")
+        println(s"$B or $B = ${B || B} \n")
+
+        // NOT
+        println(s"not($A) = ${!A}")
+        println(s"not($B) = ${!B} \n")
+        
 
         // Operadores de Pertenencia
 
