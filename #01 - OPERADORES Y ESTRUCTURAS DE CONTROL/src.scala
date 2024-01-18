@@ -33,6 +33,33 @@ object Main {
         print("")
 
         // Operadores de Asignacion
+        println("OPERADORES DE ASIGNACION")
+        println("""
+            Asignación
+            """)
+        var x = 5
+        println(s"A la variable *x* le asignamos el valor $x, con la siguiente sintaxis x = 1 \n")
+
+        println("CONTADOR DE SUMA")
+        x += 1
+        println(s"La operacion (x += 1), es equivalente x = x + 1, que da como resultado $x \n")
+
+        println("CONTADOR DE RESTA")
+        x -= 2
+        print(s"La operacion (x -= 2), es equivalente x = x - 2, que da como resultado $x \n")
+
+        println("CONTADOR DE PRODUCTO")
+        x *= 5
+        println(s"La operacion (x *= 5), es equivalente x = x * 5, que da como resultado $x \n")
+
+        println("CONTADOR DE DIVISION")
+        x /= 5
+        println(s"La operacion (x /= 5), es equivalente x = x / 5, que da como resultado $x \n")
+
+        println("CONTADOR DE MODULO")
+        println(s"La operacion (x %= 2), es equivalente al residuo de la división entre $x / 2")
+        x %= 2
+        println(s"Esta operacion da como resultado $x \n")
 
         // Operadores Logicos
 
