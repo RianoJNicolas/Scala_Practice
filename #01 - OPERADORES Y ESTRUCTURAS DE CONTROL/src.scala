@@ -80,8 +80,20 @@ object Main {
         println(s"not($A) = ${!A}")
         println(s"not($B) = ${!B} \n")
         
-
         // Operadores de Pertenencia
+        println("""OPERADORES DE PERTENCIA
+                    En Scala no hay operadores de este tipo,
+                    Pero existen metodos para una estructura de datos
+                    como lo son las listas o los conjuntos
+                """)
+        val my_list = List(1, 10, 4, 5, 100)
+        println(s"La lista es: ${my_list.toString}")
+        val element = 2
+        println(s"¿$element esta en la lista? RTA->${my_list.contains(element)}\n")
+        
+        val my_set = Set(1, 2, 3, 4, 5)
+        println(s"El conjunto es: ${my_set.toString}")
+        println(s"¿$element esta en el conjunto? RTA->${my_set(element)}\n")
 
         // Operadores de Identidad
 
