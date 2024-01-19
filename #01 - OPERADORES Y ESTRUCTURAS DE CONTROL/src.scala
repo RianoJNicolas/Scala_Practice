@@ -108,7 +108,33 @@ object Main {
         println(s"¿${d.toString} es el mismo objeto que ${f.toString}? RTA->${d eq f}\n")
         
         // Operadores Bit a Bit
-        
+        println("OPERADORES BIT A BIT")
+        val x1 = 10 // binario es 00001010
+        val y1 = 12 // binario es 00001100
+
+        // AND - bit a bit
+        var z = x1 & y1 // decimal es 8 - binario es 00001000
+        println(s"La operacion: $x1 & $y1 = $z")
+
+        // OR - bit a bit
+        z = x1 | y1 // decimal es 14 - binario es 00001110      
+        println(s"La operacion: $x1 | $y1 = $z")
+
+        // XOR - bit a bit
+        z = x1 ^ y1 // decimal es 6 - binario es 00000110
+        println(s"La operacion: $x1 ^ $y1 = $z")
+
+        // NOT - bit a bit
+        z = ~x1 // decimal es -11 - binario es 11110101
+        println(s"La operacion: ~$x1 = $z")
+
+        // Desplazamiento a la izquierda - bit a bit
+        z = x1 << 2 // decimal es 40 - binario 00101000
+        println(s"La operacion: $x1 << 2 = $z")
+
+        // Desplazamiento a la derecha - bit a bit
+        z = x1 >> 2 // decimal es 2 - binario es 00000010
+        println(s"La operacion: $x1 >> 2 = $z \n")
 
         // Estructuras de Control
 
