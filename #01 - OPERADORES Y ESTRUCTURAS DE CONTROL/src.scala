@@ -180,13 +180,25 @@ object Main {
             println("Ingresa el divisor de la division: ")
             val divisor = scala.io.StdIn.readLine().toInt
             val division = dividendo/divisor
-            println(s"La division entre $dividendo / $divisor es igual a $division")
+            println(s"La division entre $dividendo / $divisor es igual a $division \n")
         }
         catch {
-            case e: ArithmeticException => println("No se puede dividir por cero")
+            case e: ArithmeticException => println("No se puede dividir por cero \n")
         }
 
         // Dificultad Extra
-        
+        println("EJERCICIO EXTRA")
+        import scala.util.control.Breaks._
+        for (i <- 9 to 56) {
+            breakable {
+                if (i == 16) {
+                    break
+                }
+                else if (i%3==0) {
+                    break
+                }
+                println(i)    
+            }
+        }
     }
 }
