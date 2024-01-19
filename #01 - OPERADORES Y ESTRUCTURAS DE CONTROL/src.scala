@@ -137,7 +137,56 @@ object Main {
         println(s"La operacion: $x1 >> 2 = $z \n")
 
         // Estructuras de Control
+        // Ciclo IF
+        println("CICLO IF")
+        if (x1%2 == 0) {
+            println(s"$x1 es multiplo de 2")
+        }
+        else if (x1%3 == 0) {
+            println(s"$x1 es multiplo de 3")
+        }
+        else {
+            println(s"$x1 no es multiplo de 2 ni de 3")
+        }
+
+        // Ciclo WHILE
+        println("\nCICLO WHILE")
+        while (z <= 10) {
+            println(z.toString)
+            z += 1
+        }
+
+        // Ciclo FOR
+        println("\nCICLO FOR")
+        for (i <- 1 to 5) {
+            println(i.toString)
+        }
+
+        // Match
+        println("\nESTRUCTURA MATCH")
+        val ciudad = "Bogota"
+
+        ciudad match {
+            case "Bogota" => println(s"La ciudad $ciudad es la capital de Colombia\n")
+            case "Caracas" => println(s"La ciudad $ciudad es la capital de Venezuela\n")
+            case "Quito" => println(s"La ciudad $ciudad es la capital de Ecuador\n")
+        }
+
+        // Manejo de Excepciones
+        println("Try-Catch - Excepciones")
+        try{
+            println("Ingresa el dividendo de la division: ")
+            val dividendo = scala.io.StdIn.readLine().toInt
+            println("Ingresa el divisor de la division: ")
+            val divisor = scala.io.StdIn.readLine().toInt
+            val division = dividendo/divisor
+            println(s"La division entre $dividendo / $divisor es igual a $division")
+        }
+        catch {
+            case e: ArithmeticException => println("No se puede dividir por cero")
+        }
 
         // Dificultad Extra
+        
     }
 }
