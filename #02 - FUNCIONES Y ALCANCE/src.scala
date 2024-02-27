@@ -13,7 +13,7 @@ object Main {
         las reglas son las siguientes:
         """)
         // Funcion dentro de otra funcion
-            def reglas() = {
+            def reglas(): Unit = {
                 print("""
             1. Debes ingresar el objeto con el que jugaras
             2. El pc elegira aleatoriamente un objeto
@@ -28,8 +28,22 @@ object Main {
         }
 
 
+        // Funcion sin parametros con retorno   
+        // Funcion para pedir el objeto a jugar
+        def functionInput(): String = {
+            println("Ingresa tu objeto con el que vas a jugar: ")
+            var option = scala.io.StdIn.readLine()
+            while(option != "piedra" && option != "tijera" && option != "papel"){
+                println("Ingresa tu objeto con el que vas a jugar: ")
+                option = scala.io.StdIn.readLine()
+            }
+            return option
+        }
+
         def run(): Unit = {
             welcomePlayer()
+            println(varGlobal)
+            var option_player = functionInput()
         }
         
         run()
