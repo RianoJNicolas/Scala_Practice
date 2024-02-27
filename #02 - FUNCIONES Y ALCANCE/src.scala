@@ -1,3 +1,5 @@
+import scala.util.Random
+
 object Main {
     def main(args: Array[String]): Unit = {
         // Variable Global
@@ -40,10 +42,48 @@ object Main {
             return option
         }
 
+
+        // (Funcion con un parametro y sin retorno)
+        // Funcion competencia
+        def playCompetition(optionPlayer:String): Unit = {
+            // Concepto de Variable Local
+            val optionList = List("piedra", "papel", "tijera")
+            var optionPC = Random.shuffle(optionList).head
+            println(s"la opcion del pc fue: $optionPC \n")
+            if (optionPC == optionPlayer) {
+                println("Emptados")
+            }
+            else if (optionPC == "papel") {
+                if (optionPlayer == "piedra") {
+                    println("perdiste")
+                }
+                else if(optionPlayer == "tijera") {
+                    println("ganaste")
+                }
+            }
+            else if (optionPC == "tijera") {
+                if (optionPlayer == "papel") {
+                    println("perdiste")
+                }
+                else if (optionPlayer == "piedra") {
+                    println("ganaste")
+                }
+            }
+            else if (optionPC == "piedra") {
+                if (optionPlayer == "papel") {
+                    println("ganaste")
+                }
+                else if (optionPlayer == "tijera") {
+                    println("perdiste")
+                }
+            }
+        }
+
         def run(): Unit = {
             welcomePlayer()
             println(varGlobal)
             var option_player = functionInput()
+            playCompetition(option_player)
         }
         
         run()
