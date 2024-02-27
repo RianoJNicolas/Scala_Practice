@@ -87,5 +87,35 @@ object Main {
         }
         
         run()
+
+        /*
+        DIFICULTAD EXTRA
+        */
+        println("*---------------------------------*")
+        println("*       DIFICULTAD EXTRA          *")
+        println("*---------------------------------*")
+
+        def extraDifficult(param1: String, param2: String): Float = {
+            var contador = 0
+            for (i <- 0 to 101) {
+                if (i%3 == 0 && i%5 == 0) {
+                    println(s"para el numero $i: $param1 $param2")
+                }
+                else if(i%3 == 0) {
+                    println(s"para el numero $i: $param1")
+                }
+                else if(i%5 == 0) {
+                    println(s"para el numero $i: $param2")
+                }
+                else {
+                    contador += 1
+                    println(s"para el numero $i no hay texto")
+                }
+            }
+            return contador
+        }
+
+        println("\nAhora vamos con el ejercicio extra\n")
+        println(extraDifficult("hola", "mundo"))
     }
 }
