@@ -10,5 +10,13 @@ object Main {
         // 1.2 Secuencias:
         val mySeq = Seq(1, 2, 3, 4, 5)
         println(s"Secuencia = $mySeq\n")
+
+        // 1.2 Maps:
+        val myMap = Map(1 -> "one", 2 -> "two")
+        println(s"Map = $myMap\n")
+
+        // 1.3 Tuplas:
+        val myTupla = (1, "one", 7.0, "seven")
+        println(s"Tupla = $myTupla\n")
     }
 }
