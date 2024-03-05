@@ -26,5 +26,9 @@ object Main {
         // 1.5 Vector:
         val myVector = Vector(1, 2, 3, 4, 5)
         println(s"Vector = $myVector\n")
+
+        // 1.6 Sets:
+        val mySet = Set(1, 2, 3, 4, 5)
+        println(s"Set = $mySet\n")
     }
 }
