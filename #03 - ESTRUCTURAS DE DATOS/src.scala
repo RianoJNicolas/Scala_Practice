@@ -35,13 +35,13 @@ object Main {
 
         // Listas:
         println(s"Lista Inicial = ${myList}")
-        myList.append(6) # Insercion
-        print(f'Lista despues de agregar un elemento = {myList}')
-        myList.pop(1) # Borrado
-        print(f'Lista luego de borrar un elemento = {myList}')
-        myList[0] = 100 # Actualizacion
-        print(f'Lista actualizada = {myList}')
-        myList.sort() # Ordenacion
-        print(f'Lista ordenada = {myList}\n')
+        var secondList = myList :+ 6 // Insercion
+        println(s"Lista despues de agregar un elemento = ${secondList}")
+        //myList.pop(1) # Borrado
+        //println(f'Lista luego de borrar un elemento = {myList}')
+        //myList[0] = 100 # Actualizacion
+        //println(f'Lista actualizada = {myList}')
+        //myList.sort() # Ordenacion
+        //println(f'Lista ordenada = {myList}\n')
     }
 }
