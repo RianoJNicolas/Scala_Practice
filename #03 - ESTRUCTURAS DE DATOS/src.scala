@@ -37,7 +37,8 @@ object Main {
         println(s"Lista Inicial = ${myList}")
         var secondList = myList :+ 6 // Insercion
         println(s"Lista despues de agregar un elemento = ${secondList}")
-        //myList.pop(1) # Borrado
+        var secondList_filter = secondList.filter(_!=3) // Borrado
+        println(s"Lista despues de borrar elementos = ${secondList_filter}")
         //println(f'Lista luego de borrar un elemento = {myList}')
         //myList[0] = 100 # Actualizacion
         //println(f'Lista actualizada = {myList}')
