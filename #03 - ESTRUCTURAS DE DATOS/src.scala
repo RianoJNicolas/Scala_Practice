@@ -39,10 +39,9 @@ object Main {
         println(s"Lista despues de agregar un elemento = ${secondList}")
         var secondList_filter = secondList.filter(_!=3) // Borrado
         println(s"Lista despues de borrar elementos = ${secondList_filter}")
-        //println(f'Lista luego de borrar un elemento = {myList}')
-        //myList[0] = 100 # Actualizacion
-        //println(f'Lista actualizada = {myList}')
-        //myList.sort() # Ordenacion
-        //println(f'Lista ordenada = {myList}\n')
+        var secondList_updated = secondList_filter.updated(1, 10) // Actualizacion
+        println(s"Lista actualizada = ${secondList_updated}")
+        var secondList_sorted = secondList_updated.sorted // Ordenacion
+        println(s"Lista ordenada = ${secondList_sorted}\n")
     }
 }
