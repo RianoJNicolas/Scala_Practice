@@ -50,9 +50,9 @@ object Main {
         println(s"Secuencia despues de agregar un elemento = ${secondSeq}")
         var secondSeq_filter = secondSeq.filter(_!=3) // Borrado
         println(s"Secuencia despues de borrar elementos = ${secondSeq_filter}")
-        /*var secondList_updated = secondList_filter.updated(1, 10) // Actualizacion
-        println(s"Lista actualizada = ${secondList_updated}")
-        var secondList_sorted = secondList_updated.sorted // Ordenacion
-        println(s"Lista ordenada = ${secondList_sorted}\n")*/
+        var secondSeq_updated = secondSeq_filter.updated(1, 10) // Actualizacion
+        println(s"Secuencia actualizada = ${secondSeq_updated}")
+        var secondSeq_sorted = secondSeq_updated.sorted // Ordenacion
+        println(s"Secuencia ordenada = ${secondSeq_sorted}\n")
     }
 }
