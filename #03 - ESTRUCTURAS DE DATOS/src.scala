@@ -43,5 +43,16 @@ object Main {
         println(s"Lista actualizada = ${secondList_updated}")
         var secondList_sorted = secondList_updated.sorted // Ordenacion
         println(s"Lista ordenada = ${secondList_sorted}\n")
+
+        // Secuencias:
+        println(s"Secuencia Inicial = ${mySeq}")
+        var secondSeq = mySeq :+ 6 // Insercion
+        println(s"Secuencia despues de agregar un elemento = ${secondSeq}")
+        var secondSeq_filter = secondSeq.filter(_!=3) // Borrado
+        println(s"Secuencia despues de borrar elementos = ${secondSeq_filter}")
+        /*var secondList_updated = secondList_filter.updated(1, 10) // Actualizacion
+        println(s"Lista actualizada = ${secondList_updated}")
+        var secondList_sorted = secondList_updated.sorted // Ordenacion
+        println(s"Lista ordenada = ${secondList_sorted}\n")*/
     }
 }
