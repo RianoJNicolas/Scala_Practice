@@ -54,5 +54,10 @@ object Main {
         println(s"Secuencia actualizada = ${secondSeq_updated}")
         var secondSeq_sorted = secondSeq_updated.sorted // Ordenacion
         println(s"Secuencia ordenada = ${secondSeq_sorted}\n")
+
+        // Maps:
+        println(s"Map Inicial = ${myMap}")
+        var sencondMap = myMap + (3 -> "Three")
+        println(s"Map despues de agregar un elemento = ${sencondMap}")
     }
 }
