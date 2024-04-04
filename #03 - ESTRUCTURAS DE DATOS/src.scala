@@ -57,7 +57,9 @@ object Main {
 
         // Maps:
         println(s"Map Inicial = ${myMap}")
-        var sencondMap = myMap + (3 -> "Three")
+        var sencondMap = myMap + (3 -> "Three")  // Insercion
         println(s"Map despues de agregar un elemento = ${sencondMap}")
+        var secondMap_filter = sencondMap - 1 // Borrado
+        println(s"Map despues de borrar el elemento con clave 1 = ${secondMap_filter}")
     }
 }
