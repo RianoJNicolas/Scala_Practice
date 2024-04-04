@@ -61,5 +61,7 @@ object Main {
         println(s"Map despues de agregar un elemento = ${sencondMap}")
         var secondMap_filter = sencondMap - 1 // Borrado
         println(s"Map despues de borrar el elemento con clave 1 = ${secondMap_filter}")
+        var secondMap_updated = secondMap_filter + (3 -> "Tres") // Actualizacion
+        println(s"Map actualizado = ${secondMap_updated}")
     }
 }
