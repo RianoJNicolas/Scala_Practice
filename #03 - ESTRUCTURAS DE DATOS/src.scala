@@ -57,11 +57,14 @@ object Main {
 
         // Maps:
         println(s"Map Inicial = ${myMap}")
-        var sencondMap = myMap + (3 -> "Three")  // Insercion
+        var sencondMap = myMap + (100 -> "One hundred") + (3 -> "Three")  // Insercion
         println(s"Map despues de agregar un elemento = ${sencondMap}")
         var secondMap_filter = sencondMap - 1 // Borrado
         println(s"Map despues de borrar el elemento con clave 1 = ${secondMap_filter}")
         var secondMap_updated = secondMap_filter + (3 -> "Tres") // Actualizacion
         println(s"Map actualizado = ${secondMap_updated}")
+        import collection.immutable.SortedMap // Ordenacion
+        var secondMap_sorted = SortedMap.empty[Int, String] ++ secondMap_updated 
+        println(s"Map ordenado = ${secondMap_sorted}\n")
     }
 }
