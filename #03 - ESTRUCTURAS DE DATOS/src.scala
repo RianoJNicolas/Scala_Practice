@@ -66,5 +66,10 @@ object Main {
         import collection.immutable.SortedMap // Ordenacion
         var secondMap_sorted = SortedMap.empty[Int, String] ++ secondMap_updated 
         println(s"Map ordenado = ${secondMap_sorted}\n")
+
+        // Tuplas
+        println(s"Tupla Inicial = ${myTupla}")
+        var sencondTupla =  myTupla ++ ("ten", 10.00) // Insercion
+        println(s"Tupla despues de agregar elementos = ${sencondTupla}")
     }
 }
