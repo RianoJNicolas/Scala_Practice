@@ -68,11 +68,10 @@ object Main {
         println(s"Map ordenado = ${secondMap_sorted}\n")
 
         // Tuplas
-        val myTupla1 = (1, 50, 2, 60, 100, 5)
-        println(s"Tupla Inicial = ${myTupla1}")
-        var sencondTupla =  myTupla1 ++ (300, 10) // Insercion
+        println(s"Tupla Inicial = ${myTupla}")
+        var sencondTupla =  myTupla ++ (300, 10) // Insercion
         println(s"Tupla despues de agregar elementos = ${sencondTupla}")
-        var secondTupla_filter = sencondTupla.filter(_ > 2)
-        println(s"Tupla despues de borrar = ${secondTupla_filter}")
+        var secondTupla_delete = (sencondTupla._1, sencondTupla._3, sencondTupla._5, sencondTupla._6) 
+        println(s"Tupla despues de borrar = ${secondTupla_delete}")
     }
 }
