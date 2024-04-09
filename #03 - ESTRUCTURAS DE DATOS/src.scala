@@ -73,5 +73,7 @@ object Main {
         println(s"Tupla despues de agregar elementos = ${sencondTupla}")
         var secondTupla_delete = (sencondTupla._1, sencondTupla._3, sencondTupla._5, sencondTupla._6) 
         println(s"Tupla despues de borrar = ${secondTupla_delete}")
+        var secondTupla_updated = (secondTupla_delete._1, 8.0, secondTupla_delete._3, secondTupla_delete._4)  // Actualizacion
+        println(s"Tupla actualizada = ${secondTupla_updated}")
     }
 }
