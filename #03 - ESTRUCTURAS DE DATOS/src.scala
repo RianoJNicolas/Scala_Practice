@@ -73,9 +73,15 @@ object Main {
         println(s"Tupla despues de agregar elementos = ${sencondTupla}")
         var secondTupla_delete = (sencondTupla._1, sencondTupla._3, sencondTupla._5, sencondTupla._6) 
         println(s"Tupla despues de borrar = ${secondTupla_delete}")
-        var secondTupla_updated = (secondTupla_delete._1, 8.0, secondTupla_delete._3, secondTupla_delete._4)  // Actualizacion
+        var secondTupla_updated = (secondTupla_delete._1, 8, secondTupla_delete._3, secondTupla_delete._4)  // Actualizacion
         println(s"Tupla actualizada = ${secondTupla_updated}")
-        var secondList_Tuple = List(secondTupla_updated).sorted
-        println(s"${secondList_Tuple}")
+        var secondList_Tuple = (secondTupla_updated).toList // Ordenar
+        var secondListTupla_order = secondList_Tuple.sorted
+        var SecondTupla_ordered = secondListTupla_order match {
+            case List(a, b) => (a,b)
+            case List(a, b, c) => (a,b,c)
+            case List(a, b, c, d) => (a,b,c,d)
+        }
+        println(s"Tupla ordenada = ${SecondTupla_ordered}")
     }
 }
