@@ -83,5 +83,8 @@ object Main {
             case List(a, b, c, d) => (a,b,c,d)
         }
         println(s"Tupla ordenada = ${SecondTupla_ordered}")
+
+        // Arrays
+        println(s"Array Inicial = ${myArray}")
     }
 }
