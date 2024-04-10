@@ -75,5 +75,7 @@ object Main {
         println(s"Tupla despues de borrar = ${secondTupla_delete}")
         var secondTupla_updated = (secondTupla_delete._1, 8.0, secondTupla_delete._3, secondTupla_delete._4)  // Actualizacion
         println(s"Tupla actualizada = ${secondTupla_updated}")
+        var secondList_Tuple = List(secondTupla_updated).sorted
+        println(s"${secondList_Tuple}")
     }
 }
