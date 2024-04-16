@@ -92,5 +92,9 @@ object Main {
         println(s"Vector Inicial = ${myVector}")
         var sencondVector =  myVector ++ Vector(300, 10) // Insercion
         println(s"Vector despues de agregar un elemento = ${sencondVector}")
+        val indice = 3
+        val nuevoValor = 500
+        var sencondVector_updated = sencondVector.updated(indice, nuevoValor) // Actualización
+        println(s"Vector actualizado = ${sencondVector_updated}") 
     }
 }
