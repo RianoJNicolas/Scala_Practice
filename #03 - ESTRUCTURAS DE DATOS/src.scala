@@ -82,9 +82,15 @@ object Main {
             case List(a, b, c) => (a,b,c)
             case List(a, b, c, d) => (a,b,c,d)
         }
-        println(s"Tupla ordenada = ${SecondTupla_ordered}")
+        println(s"Tupla ordenada = ${SecondTupla_ordered}\n")
 
-        // Arrays
-        println(s"Array Inicial = ${myArray}")
+        // Arrays No se puede visualizar muy bien
+        // No encontre mucha documentación al respecto
+        println(s"Array Inicial = ${myArray} \n")
+
+        // Vectores
+        println(s"Vector Inicial = ${myVector}")
+        var sencondVector =  myVector ++ Vector(300, 10) // Insercion
+        println(s"Vector despues de agregar un elemento = ${sencondVector}")
     }
 }
