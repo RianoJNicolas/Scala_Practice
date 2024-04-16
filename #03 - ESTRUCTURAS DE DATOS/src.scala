@@ -92,9 +92,12 @@ object Main {
         println(s"Vector Inicial = ${myVector}")
         var sencondVector =  myVector ++ Vector(300, 10) // Insercion
         println(s"Vector despues de agregar un elemento = ${sencondVector}")
+        val elementoEliminar = 10
+        var secondVector_delete = sencondVector.filterNot(_ == elementoEliminar) // Borrar
+        println(s"Vector despues de borrar = ${secondVector_delete}")
         val indice = 3
         val nuevoValor = 500
-        var sencondVector_updated = sencondVector.updated(indice, nuevoValor) // Actualización
+        var sencondVector_updated = secondVector_delete.updated(indice, nuevoValor) // Actualización
         println(s"Vector actualizado = ${sencondVector_updated}") 
     }
 }
