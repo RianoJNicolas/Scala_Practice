@@ -98,6 +98,8 @@ object Main {
         val indice = 3
         val nuevoValor = 500
         var sencondVector_updated = secondVector_delete.updated(indice, nuevoValor) // Actualización
-        println(s"Vector actualizado = ${sencondVector_updated}") 
+        println(s"Vector actualizado = ${sencondVector_updated}")
+        var secondVector_sorted = sencondVector_updated.sorted
+        println(s"Vector ordenado = ${secondVector_sorted}\n")
     }
 }
