@@ -99,7 +99,12 @@ object Main {
         val nuevoValor = 500
         var sencondVector_updated = secondVector_delete.updated(indice, nuevoValor) // Actualización
         println(s"Vector actualizado = ${sencondVector_updated}")
-        var secondVector_sorted = sencondVector_updated.sorted
+        var secondVector_sorted = sencondVector_updated.sorted // Ordenar
         println(s"Vector ordenado = ${secondVector_sorted}\n")
+
+        // Sets
+        println(s"Set Inicial = ${mySet}")
+        var sencondSet =  mySet + 300 + 10 // Insercion
+        println(s"Set despues de agregar elementos = ${sencondSet}")
     }
 }
