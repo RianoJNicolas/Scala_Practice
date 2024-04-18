@@ -104,7 +104,9 @@ object Main {
 
         // Sets
         println(s"Set Inicial = ${mySet}")
-        var sencondSet =  mySet + 300 + 10 // Insercion
-        println(s"Set despues de agregar elementos = ${sencondSet}")
+        var secondSet =  mySet + 300 + 10 // Insercion
+        println(s"Set despues de agregar elementos = ${secondSet}")
+        var secondSet_delete = secondSet - 5 // Borrado
+        println(s"Set despues de borrar = ${secondSet_delete}")
     }
 }
