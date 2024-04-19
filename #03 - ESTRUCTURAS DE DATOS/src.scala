@@ -108,5 +108,8 @@ object Main {
         println(s"Set despues de agregar elementos = ${secondSet}")
         var secondSet_delete = secondSet - 5 // Borrado
         println(s"Set despues de borrar = ${secondSet_delete}")
+        var secondSet_up1 = secondSet_delete - 3
+        var secondSet_update = secondSet_up1 + 1050 // Actualizacion
+        println(s"Set actualizado = ${secondSet_update}")
     }
 }
