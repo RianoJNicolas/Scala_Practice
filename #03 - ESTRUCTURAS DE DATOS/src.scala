@@ -111,5 +111,8 @@ object Main {
         var secondSet_up1 = secondSet_delete - 3
         var secondSet_update = secondSet_up1 + 1050 // Actualizacion
         println(s"Set actualizado = ${secondSet_update}")
+        import scala.collection.immutable.SortedSet
+        var set_sorted = secondSet_update.to(SortedSet) // Ordenar
+        println(s"Set ordenado = ${set_sorted}\n")
     }
 }
