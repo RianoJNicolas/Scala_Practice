@@ -1,3 +1,7 @@
+import scala.util.matching.Regex
+import collection.immutable.SortedMap 
+import scala.collection.immutable.SortedSet
+
 object Main {
     def main(args: Array[String]): Unit = {
 
@@ -63,8 +67,7 @@ object Main {
         println(s"Map despues de borrar el elemento con clave 1 = ${secondMap_filter}")
         var secondMap_updated = secondMap_filter + (3 -> "Tres") // Actualizacion
         println(s"Map actualizado = ${secondMap_updated}")
-        import collection.immutable.SortedMap // Ordenacion
-        var secondMap_sorted = SortedMap.empty[Int, String] ++ secondMap_updated 
+        var secondMap_sorted = SortedMap.empty[Int, String] ++ secondMap_updated // Ordenacion
         println(s"Map ordenado = ${secondMap_sorted}\n")
 
         // Tuplas
@@ -111,7 +114,6 @@ object Main {
         var secondSet_up1 = secondSet_delete - 3
         var secondSet_update = secondSet_up1 + 1050 // Actualizacion
         println(s"Set actualizado = ${secondSet_update}")
-        import scala.collection.immutable.SortedSet
         var set_sorted = secondSet_update.to(SortedSet) // Ordenar
         println(s"Set ordenado = ${set_sorted}\n")
 
@@ -158,6 +160,12 @@ object Main {
             }
             return option
         }
+
+        def check_Input(numberContact):
+            patron = r"^\d{10}$ " 
+            // Expresión regular para comprobar que tenga 10 dígitos y no contenga ningún carácter alfabético
+            # Devolver True si el número cumple el patrón, o False en caso contrario
+            return re.match(patron, numberContact) is not None
 
         welcome_Menu()
     }
