@@ -114,5 +114,32 @@ object Main {
         import scala.collection.immutable.SortedSet
         var set_sorted = secondSet_update.to(SortedSet) // Ordenar
         println(s"Set ordenado = ${set_sorted}\n")
+
+        // ----------------------------------------------------------- 
+        // DIFICULTAD EXTRA                                          |
+        // -----------------------------------------------------------
+        var MapContacts = Map(
+            "3015675434" -> "Lucho Diaz",
+            "3106742354" -> "Rigoberto Uran",
+            "3205438756" -> "Pedro Urango")
+
+        def welcome_Menu(): Unit = {
+            println("""
+                Hola !!, soy tu agenda de contactos. Aca puedes agregar, 
+                actualizar, borrar y buscar cualquiera de tus contactos.
+
+                Recuerda que el contacto simplemente tiene el nombre y el
+                telefono correspondiente.
+
+                ¡¡¡ Comencemos!!!  
+                """)
+            println("Ingresa tu nombre: ")
+            var name = scala.io.StdIn.readLine()
+            println("Ingresa tu nombre: ")
+            var option = mainMenu(name)
+            return option
+        }
+        
+
     }
 }
