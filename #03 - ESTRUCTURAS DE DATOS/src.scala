@@ -161,11 +161,12 @@ object Main {
             return option
         }
 
-        def check_Input(numberContact):
-            patron = r"^\d{10}$ " 
+        def check_Input(numberContact): Boolean {
+            val patron: Regex = """^\d{10}$""".r
             // Expresión regular para comprobar que tenga 10 dígitos y no contenga ningún carácter alfabético
-            # Devolver True si el número cumple el patrón, o False en caso contrario
-            return re.match(patron, numberContact) is not None
+            // Devolver True si el número cumple el patrón, o False en caso contrario
+            return patron.findFirstIn(numberContact).isDefined
+        }
 
         welcome_Menu()
     }
