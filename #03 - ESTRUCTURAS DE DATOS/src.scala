@@ -123,7 +123,7 @@ object Main {
             "3106742354" -> "Rigoberto Uran",
             "3205438756" -> "Pedro Urango")
 
-        def welcome_Menu(): Unit = {
+        def welcome_Menu(): String = {
             println("""
                 Hola !!, soy tu agenda de contactos. Aca puedes agregar, 
                 actualizar, borrar y buscar cualquiera de tus contactos.
@@ -139,7 +139,26 @@ object Main {
             var option = mainMenu(name)
             return option
         }
-        
 
+        def mainMenu(userName:String): String = { 
+            println(s"$userName, escoge alguna de las siguientes opciones: ")
+            println("""
+                1. Busqueda de contactos
+                2. Agregar un contacto
+                3. Actualizar un contacto
+                4. Eliminar un contacto
+                5. Salir 
+                """)
+            println("Ingresa la acción a realizar: ")
+            var option = scala.io.StdIn.readLine()
+            while (option != "1" && option != "2" && option != "3" && option != "4" && option != "5") {
+                println("Ingresaste un valor erroneo, vuelvelo a intentar")
+                println("Ingresa la acción a realizar: ")
+                option = scala.io.StdIn.readLine() 
+            }
+            return option
+        }
+
+        welcome_Menu()
     }
 }
