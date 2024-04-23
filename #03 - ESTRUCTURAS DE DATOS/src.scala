@@ -191,6 +191,13 @@ object Main {
             }
         }
 
+        def add_Contact(numberContact, nameContact):
+            dirContacts[numberContact] = nameContact
+            print(f'Agregaste a tu agenda de contactos el nombre {nameContact}')
+            print(f'y le asignaste el numero de celular {numberContact} \n')
+
+    printContacts(dirContacts)
+
         //welcome_Menu()
         //println(check_Input("301423711qw"))
         //printContacts(mapContacts)
