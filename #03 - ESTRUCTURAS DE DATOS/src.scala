@@ -120,7 +120,7 @@ object Main {
         // ----------------------------------------------------------- 
         // DIFICULTAD EXTRA                                          |
         // -----------------------------------------------------------
-        var MapContacts = Map(
+        var mapContacts = Map(
             "3015675434" -> "Lucho Diaz",
             "3106742354" -> "Rigoberto Uran",
             "3205438756" -> "Pedro Urango")
@@ -168,7 +168,15 @@ object Main {
             return patron.findFirstIn(numberContact).isDefined
         }
 
-        welcome_Menu()
-        println(check_Input("301423711qw"))
+        def printContacts(mapContacts: Map[String, String]): Unit = {
+            println("Tu agenda queda de la siguiente manera:")
+            for ((clave, valor) <- mapContacts) {
+                println(s"${valor} su numero es ${clave}")
+            }
+        }
+
+        //welcome_Menu()
+        //println(check_Input("301423711qw"))
+        printContacts(mapContacts)
     }
 }
