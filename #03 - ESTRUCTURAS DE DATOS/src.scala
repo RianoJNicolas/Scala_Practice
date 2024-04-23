@@ -175,6 +175,18 @@ object Main {
             }
         }
 
+        def find_Contact(numberContact, nameContact, option): = {
+            if (option == "1"):
+                contact = dirContacts.get(numberContact)
+                print(f'El numero de celular {numberContact} le corresponde a {contact}')
+            elif (option == "2"):
+                keys = []
+                for clave, valor in dirContacts.items():
+                    if valor == nameContact:
+                        keys.append(clave)
+                print(f'{nameContact} tiene el numero de celular {str(keys)}')
+        }
+
         //welcome_Menu()
         //println(check_Input("301423711qw"))
         printContacts(mapContacts)
