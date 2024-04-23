@@ -175,20 +175,25 @@ object Main {
             }
         }
 
-        def find_Contact(numberContact, nameContact, option): = {
-            if (option == "1"):
-                contact = dirContacts.get(numberContact)
-                print(f'El numero de celular {numberContact} le corresponde a {contact}')
-            elif (option == "2"):
-                keys = []
-                for clave, valor in dirContacts.items():
-                    if valor == nameContact:
-                        keys.append(clave)
-                print(f'{nameContact} tiene el numero de celular {str(keys)}')
+        def find_Contact(numberContact: String, nameContact: String, option: String): Unit = {
+            if (option == "1") {
+                var contact = mapContacts.getOrElse(numberContact, "No existe el numero de celular")
+                println(s"El numero de celular ${numberContact} le corresponde a ${contact}")
+            }
+            else if (option == "2") {
+                var keys: List[String] = List()
+                for ((clave, valor) <- mapContacts) {
+                    if (valor == nameContact) {
+                        keys = keys ::: List(clave)
+                    }
+                }
+                println(s"${nameContact} tiene el numero de celular ${keys.mkString(", ")}")
+            }
         }
 
         //welcome_Menu()
         //println(check_Input("301423711qw"))
-        printContacts(mapContacts)
+        //printContacts(mapContacts)
+        find_Contact("1","Lucho Diaz","2")
     }
 }
