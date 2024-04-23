@@ -161,7 +161,7 @@ object Main {
             return option
         }
 
-        def check_Input(numberContact): Boolean {
+        def check_Input(numberContact: String): Boolean =  {
             val patron: Regex = """^\d{10}$""".r
             // Expresión regular para comprobar que tenga 10 dígitos y no contenga ningún carácter alfabético
             // Devolver True si el número cumple el patrón, o False en caso contrario
@@ -169,5 +169,6 @@ object Main {
         }
 
         welcome_Menu()
+        println(check_Input("301423711qw"))
     }
 }
