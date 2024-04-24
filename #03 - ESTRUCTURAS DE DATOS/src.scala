@@ -198,6 +198,30 @@ object Main {
             printContacts(mapContacts)
         }
 
+        def del_Contact(numberContact: String, nameContact: String, option: String): Unit = {
+            if (option == "1"):
+                contact = dirContacts.get(numberContact)
+                print(f'Estas seguro que deseas eliminar el contacto de {contact} con el numero {numberContact}')
+                delete = input("Ingresa Yes/No: ")
+                if (delete == "Yes"):
+                    del dirContacts[numberContact]
+            
+            elif (option == "2"):
+                keys = []
+                for clave, valor in dirContacts.items():
+                    if valor == nameContact:
+                        keys.append(clave)
+                for item in keys:
+                    print(f'Encontramos que para el contacto de {dirContacts.get(item)} se tiene el numero {item}')
+                    delete = input("Deseas Eliminarlo totalmente Yes/No: ")
+                    if (delete == "Yes"):
+                        del dirContacts[item]
+                    elif (delete == "No"):
+                        continue
+                    else:
+                        print("Ingresaste una opción incorrecta")
+        }
+
         //welcome_Menu()
         //println(check_Input("301423711qw"))
         //printContacts(mapContacts)
