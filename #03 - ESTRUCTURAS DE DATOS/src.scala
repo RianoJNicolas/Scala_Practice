@@ -208,21 +208,26 @@ object Main {
                     mapContacts = mapContacts - numberContact
                 }
             }
-            /*else if (option == "2") {
-                keys = []
-                for clave, valor in dirContacts.items():
-                    if valor == nameContact:
-                        keys.append(clave)
-                for item in keys:
-                    print(f'Encontramos que para el contacto de {dirContacts.get(item)} se tiene el numero {item}')
-                    delete = input("Deseas Eliminarlo totalmente Yes/No: ")
-                    if (delete == "Yes"):
-                        del dirContacts[item]
-                    elif (delete == "No"):
-                        continue
-                    else:
-                        print("Ingresaste una opción incorrecta")
-            }*/
+            else if (option == "2") {
+                var keys: List[String] = List()
+                for ((clave, valor) <- mapContacts) {
+                    if (valor == nameContact) {
+                        keys = keys ::: List(clave)
+                    }
+                }   
+                for (item <- keys) {
+                    println(s"Encontramos que para el contacto de ${mapContacts.getOrElse(item, "No existe el numero de celular")} se tiene el numero ${item}")
+                    println("Deseas Eliminarlo totalmente Yes/No: ")
+                    var delete = scala.io.StdIn.readLine()
+                    if (delete == "Yes") {
+                        mapContacts = mapContacts - numberContact
+                    }
+                    else if (delete == "No") {}
+                    else {
+                        println("Ingresaste una opción incorrecta")
+                    }
+                }
+            }
         }
 
         //welcome_Menu()
@@ -230,7 +235,7 @@ object Main {
         printContacts(mapContacts)
         //find_Contact("1","Lucho Diaz","2")
         //add_Contact("3014237116","nicol as riaño")
-        del_Contact("3015675434","1","1")
+        del_Contact("1","Lucho Diaz","2")
         printContacts(mapContacts)
     }
 }
