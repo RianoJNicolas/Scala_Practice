@@ -220,7 +220,7 @@ object Main {
                     println("Deseas Eliminarlo totalmente Yes/No: ")
                     var delete = scala.io.StdIn.readLine()
                     if (delete == "Yes") {
-                        mapContacts = mapContacts - numberContact
+                        mapContacts = mapContacts - item
                     }
                     else if (delete == "No") {}
                     else {
