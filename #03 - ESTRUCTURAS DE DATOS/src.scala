@@ -230,12 +230,45 @@ object Main {
             }
         }
 
+        def update_Contact(numberContact: String, nameContact: String, option: String): Unit = {
+            if (option == "1") {
+                contact = dirContacts.get(numberContact)
+                print(f'Vas a actualizar el contacto de {contact} con el numero {numberContact}')
+                print(f'¿Que numero deseas colocar ahora al contacto {contact}?')
+                newNumberContact = input("Ingresalo aqui: ")
+
+                while not check_Input(newNumberContact):
+                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                    numberContact = input("Ingresalo nuevamente: ")
+                
+                print(f'Vas a actualizar {numberContact} por {newNumberContact}')
+                update = input("¿ Estas segur@ de realizar esta operacion ? (Yes/No): ")
+                if (update == "Yes"):
+                    del dirContacts[numberContact]
+                    dirContacts[newNumberContact] = contact
+            }
+            elif (option == "2"):
+                keys = []
+                for clave, valor in dirContacts.items():
+                    if valor == nameContact:
+                        keys.append(clave)
+                
+                for item in keys:
+                    print(f'Encontramos que para el contacto de {dirContacts.get(item)} se tiene el numero {item}')
+                    update = input("Deseas actualizar el nombre Yes/No: ")
+                    if (update == "Yes"):
+                        dirContacts[numberContact] = nameContact
+                
+                printContacts(dirContacts)
+        }
+
+
         //welcome_Menu()
         //println(check_Input("301423711qw"))
         printContacts(mapContacts)
         //find_Contact("1","Lucho Diaz","2")
         //add_Contact("3014237116","nicol as riaño")
         del_Contact("1","Lucho Diaz","2")
-        printContacts(mapContacts)
+        //printContacts(mapContacts)
     }
 }
