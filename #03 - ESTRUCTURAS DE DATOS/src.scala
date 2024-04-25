@@ -199,14 +199,16 @@ object Main {
         }
 
         def del_Contact(numberContact: String, nameContact: String, option: String): Unit = {
-            if (option == "1"):
-                contact = dirContacts.get(numberContact)
-                print(f'Estas seguro que deseas eliminar el contacto de {contact} con el numero {numberContact}')
-                delete = input("Ingresa Yes/No: ")
-                if (delete == "Yes"):
-                    del dirContacts[numberContact]
-            
-            elif (option == "2"):
+            if (option == "1") {
+                var contact = mapContacts.getOrElse(numberContact, "No existe el numero de celular")
+                println(s"¿Estas seguro que deseas eliminar el contacto de ${contact} con el numero ${numberContact}?")
+                println("Ingresa Yes/No: ")
+                val delete = scala.io.StdIn.readLine()
+                if (delete == "Yes"){
+                    mapContacts = mapContacts - numberContact
+                }
+            }
+            /*else if (option == "2") {
                 keys = []
                 for clave, valor in dirContacts.items():
                     if valor == nameContact:
@@ -220,12 +222,15 @@ object Main {
                         continue
                     else:
                         print("Ingresaste una opción incorrecta")
+            }*/
         }
 
         //welcome_Menu()
         //println(check_Input("301423711qw"))
-        //printContacts(mapContacts)
-        find_Contact("1","Lucho Diaz","2")
-        add_Contact("3014237116","nicolas riaño")
+        printContacts(mapContacts)
+        //find_Contact("1","Lucho Diaz","2")
+        //add_Contact("3014237116","nicol as riaño")
+        del_Contact("3015675434","1","1")
+        printContacts(mapContacts)
     }
 }
