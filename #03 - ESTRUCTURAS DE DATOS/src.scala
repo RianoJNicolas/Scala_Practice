@@ -232,20 +232,25 @@ object Main {
 
         def update_Contact(numberContact: String, nameContact: String, option: String): Unit = {
             if (option == "1") {
-                contact = dirContacts.get(numberContact)
-                print(f'Vas a actualizar el contacto de {contact} con el numero {numberContact}')
-                print(f'¿Que numero deseas colocar ahora al contacto {contact}?')
-                newNumberContact = input("Ingresalo aqui: ")
+                var contact = mapContacts.getOrElse(numberContact, "No existe el numero de celular")
+                println(s"Vas a actualizar el contacto de ${contact} con el numero ${numberContact}")
+                println(s"¿Que numero deseas colocar ahora al contacto ${contact}?")
+                println("Ingresalo aqui: ")
+                var newNumberContact = scala.io.StdIn.readLine()
 
-                while not check_Input(newNumberContact):
-                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
-                    numberContact = input("Ingresalo nuevamente: ")
+                while (!(check_Input(newNumberContact))){
+                    println("Ingresaste un valor erroneo, vuelvelo a intentar")
+                    println("Ingresalo nuevamente: ")
+                    newNumberContact = scala.io.StdIn.readLine()
+                }
                 
-                print(f'Vas a actualizar {numberContact} por {newNumberContact}')
-                update = input("¿ Estas segur@ de realizar esta operacion ? (Yes/No): ")
-                if (update == "Yes"):
-                    del dirContacts[numberContact]
+                println(s"Vas a actualizar ${numberContact} por ${newNumberContact}")
+                println("¿ Estas segur@ de realizar esta operacion ? (Yes/No): ")
+                var update = scala.io.StdIn.readLine()
+                if (update == "Yes"){
+                    del dirContacts[numberContact] // Falta actualizar estas dos lineas
                     dirContacts[newNumberContact] = contact
+                }
             }
             elif (option == "2"):
                 keys = []
