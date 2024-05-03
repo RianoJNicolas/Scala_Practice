@@ -252,19 +252,28 @@ object Main {
                     mapContacts ++= Map(newNumberContact -> contact)
                 }
             }
-            /*elif (option == "2"):
-                keys = []
-                for clave, valor in dirContacts.items():
-                    if valor == nameContact:
-                        keys.append(clave)
+            else if (option == "2"){
+                var keys: List[String] = List()
+                for ((clave, valor) <- mapContacts) {
+                    if (valor == nameContact) {
+                        keys = keys ::: List(clave)
+                    }
+                }
                 
-                for item in keys:
-                    print(f'Encontramos que para el contacto de {dirContacts.get(item)} se tiene el numero {item}')
-                    update = input("Deseas actualizar el nombre Yes/No: ")
-                    if (update == "Yes"):
-                        dirContacts[numberContact] = nameContact
-                
-                printContacts(dirContacts)*/
+                for (item <- keys) {
+                    println(s"Encontramos que para el contacto de ${mapContacts.getOrElse(item, "No existe el numero de celular")} se tiene el numero ${item}")
+                    println(s"Ingresa el nuevo nombre que le pondras al contacto: ")
+                    var newNameContact = scala.io.StdIn.readLine()
+                    println(s"Deseas actualizar el nombre ${nameContact} por ${newNameContact} Yes/No: ")
+                    var update = scala.io.StdIn.readLine()
+                    if (update == "Yes") {
+                        mapContacts = mapContacts - item
+                        mapContacts ++= Map(item -> newNameContact)
+                    }    
+                }
+            
+                printContacts(mapContacts)
+            }
         }
 
 
@@ -275,7 +284,7 @@ object Main {
         //add_Contact("3014237116","nicol as riaño")
         //del_Contact("1","Lucho Diaz","2")
         //printContacts(mapContacts)
-        update_Contact("3015675434","2","1")
-        printContacts(mapContacts)
+        update_Contact("1","Lucho Diaz","2")
+        //printContacts(mapContacts)
     }
 }
