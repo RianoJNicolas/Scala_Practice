@@ -248,11 +248,11 @@ object Main {
                 println("¿ Estas segur@ de realizar esta operacion ? (Yes/No): ")
                 var update = scala.io.StdIn.readLine()
                 if (update == "Yes"){
-                    del dirContacts[numberContact] // Falta actualizar estas dos lineas
-                    dirContacts[newNumberContact] = contact
+                    mapContacts = mapContacts - numberContact
+                    mapContacts ++= Map(newNumberContact -> contact)
                 }
             }
-            elif (option == "2"):
+            /*elif (option == "2"):
                 keys = []
                 for clave, valor in dirContacts.items():
                     if valor == nameContact:
@@ -264,7 +264,7 @@ object Main {
                     if (update == "Yes"):
                         dirContacts[numberContact] = nameContact
                 
-                printContacts(dirContacts)
+                printContacts(dirContacts)*/
         }
 
 
@@ -273,7 +273,9 @@ object Main {
         printContacts(mapContacts)
         //find_Contact("1","Lucho Diaz","2")
         //add_Contact("3014237116","nicol as riaño")
-        del_Contact("1","Lucho Diaz","2")
+        //del_Contact("1","Lucho Diaz","2")
         //printContacts(mapContacts)
+        update_Contact("3015675434","2","1")
+        printContacts(mapContacts)
     }
 }
