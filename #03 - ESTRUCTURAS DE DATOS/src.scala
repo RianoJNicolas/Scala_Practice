@@ -277,6 +277,100 @@ object Main {
         }
 
 
+        def execute_Option(option, still):
+    if (option == '1'):
+        print("""
+        Para realizar la busqueda de algun contacto tienes dos opciones:
+            1. Buscar por el numero de telefono
+            2. Buscar por el nombre de contacto
+        """)
+        optionSearch = input("Ingresa la opcion que quieres: ")
+        
+        while (optionSearch != '1' and optionSearch != '2'):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            optionSearch = input("Ingresa la opcion que quieres: ")
+        
+        if (optionSearch == '1'):
+            numberContact = input("Ingresa el numero de telefono a buscar: ")
+
+            while not check_Input(numberContact):
+                print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                numberContact = input("Ingresa el numero de telefono a buscar: ")
+                
+            find_Contact(numberContact, "0", optionSearch)
+        elif (optionSearch == '2'):
+            nameContact = input("Ingresa el nombre del contacto a buscar: ")
+            find_Contact("0", nameContact, optionSearch)
+        still = True
+
+    elif(option == '2'):
+        nameContact = input("Ingresa el nombre del contacto que vas a agregar: ")
+        numberContact = input("Ingresa el numero de telefono: ")
+
+        while not check_Input(numberContact):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            numberContact = input("Ingresa nuevamente el numero de telefono: ")
+
+        add_Contact(numberContact, nameContact)
+        still = True
+
+    elif(option == '3'):
+        print("""
+        Para realizar la actualizacion de algun contacto tienes dos opciones:
+            1. Actualizar el numero de telefono
+            2. Actualizar el nombre de contacto
+        """)
+        optionUpdate = input("Ingresa la opcion que quieres: ")
+        
+        while (optionUpdate != '1' and optionUpdate != '2'):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            optionUpdate = input("Ingresa la opcion que quieres: ")
+        
+        if (optionUpdate == '1'):
+            numberContact = input("Ingresa el numero de telefono que vas a actualizar: ")
+
+            while not check_Input(numberContact):
+                print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                numberContact = input("Ingresa de nuevo el numero de telefono: ")
+                
+            update_Contact(numberContact, "0", optionUpdate)
+
+        elif (optionUpdate == '2'):
+            nameContact = input("Ingresa el nombre del contacto a buscar: ")
+            update_Contact("0", nameContact, optionUpdate)    
+        still = True
+
+    elif(option == '4'):
+        print("""
+        Para eliminar un contacto tienes dos opciones:
+            1. Eliminar por el numero de telefono
+            2. Eliminar por el nombre de contacto
+        """)
+        optionDel = input("Ingresa la opcion que quieres: ")
+
+        while (optionDel != '1' and optionDel != '2'):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            optionDel = input("Ingresa la opcion que quieres: ")
+        
+        if (optionDel == '1'):
+            numberContact = input("Ingresa el numero de telefono a buscar: ")
+
+            while not check_Input(numberContact):
+                print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                numberContact = input("Ingresa el numero de telefono a buscar: ")
+                
+            del_Contact(numberContact, "0", optionDel)
+        elif (optionDel == '2'):
+            nameContact = input("Ingresa el nombre del contacto a buscar: ")
+            del_Contact("numberContact", nameContact, optionDel)
+
+        still = True
+    elif(option == "5"):
+        still = False
+    
+    return still
+
+
         //welcome_Menu()
         //println(check_Input("301423711qw"))
         printContacts(mapContacts)
