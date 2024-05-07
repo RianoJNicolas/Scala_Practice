@@ -389,9 +389,9 @@ object Main {
                 }
                 still = True
             }
-            elif(option == "5"):
+            else if(option == "5") {
                 still = False
-            
+            }
             return still
         }
 
