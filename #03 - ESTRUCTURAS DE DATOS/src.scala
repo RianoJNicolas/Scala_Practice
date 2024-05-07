@@ -304,7 +304,7 @@ object Main {
                     }
                     find_Contact(numberContact, "0", optionSearch)
                 }
-                else if (optionSearch == "2"){
+                else if (optionSearch == "2") {
                     println("Ingresa el nombre del contacto a buscar: ")
                     var nameContact = scala.io.StdIn.readLine()
                     find_Contact("0", nameContact, optionSearch)
@@ -319,13 +319,14 @@ object Main {
 
                 while (!(check_Input(numberContact))) {
                     println("Ingresaste un valor erroneo, vuelvelo a intentar")
-                    numberContact = input("Ingresa nuevamente el numero de telefono: ")
+                    println("Ingresa el numero de telefono a buscar: ")
+                    numberContact = scala.io.StdIn.readLine()
                 }
                 add_Contact(numberContact, nameContact)
                 still = True
             }
             else if(option == "3") {
-                print("""
+                println("""
                 Para realizar la actualizacion de algun contacto tienes dos opciones:
                     1. Actualizar el numero de telefono
                     2. Actualizar el nombre de contacto
@@ -344,14 +345,16 @@ object Main {
 
                     while (!(check_Input(numberContact))) {
                         println("Ingresaste un valor erroneo, vuelvelo a intentar")
-                        numberContact = input("Ingresa de nuevo el numero de telefono: ")
+                        println("Ingresa el numero de telefono a buscar: ")
+                        numberContact = scala.io.StdIn.readLine()
                     }  
                     update_Contact(numberContact, "0", optionUpdate)
                 }
-                else if (optionUpdate == "2"):
+                else if (optionUpdate == "2") {
                     println("Ingresa el nombre del contacto a buscar: ")
                     var nameContact = scala.io.StdIn.readLine()
-                    update_Contact("0", nameContact, optionUpdate)    
+                    update_Contact("0", nameContact, optionUpdate) 
+                }   
                 still = True
             }
             elif(option == '4'):
