@@ -293,20 +293,23 @@ object Main {
                     optionSearch = scala.io.StdIn.readLine()
                 }
 
-                if (optionSearch == '1') {
+                if (optionSearch == "1") {
                     println("Ingresa el numero de telefono a buscar: ")
-                    var numberContact = scala.io.StdIn.readLine() // voy aca
-
-                    while not check_Input(numberContact):
-                        print("Ingresaste un valor erroneo, vuelvelo a intentar")
-                        numberContact = input("Ingresa el numero de telefono a buscar: ")
+                    var numberContact = scala.io.StdIn.readLine()
                         
+                    while (!(check_Input(numberContact))) {
+                        println("Ingresaste un valor erroneo, vuelvelo a intentar")
+                        println("Ingresa el numero de telefono a buscar: ")
+                        numberContact = scala.io.StdIn.readLine()
+                    }
                     find_Contact(numberContact, "0", optionSearch)
                 }
-                elif (optionSearch == '2'):
-                    nameContact = input("Ingresa el nombre del contacto a buscar: ")
+                else if (optionSearch == "2"){
+                    println("Ingresa el nombre del contacto a buscar: ")
+                    var nameContact = scala.io.StdIn.readLine()
                     find_Contact("0", nameContact, optionSearch)
-                still = True
+                }
+                var still = true
             }
             elif(option == '2'):
                 nameContact = input("Ingresa el nombre del contacto que vas a agregar: ")
