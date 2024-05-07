@@ -324,32 +324,36 @@ object Main {
                 add_Contact(numberContact, nameContact)
                 still = True
             }
-            elif(option == '3'):
+            else if(option == "3") {
                 print("""
                 Para realizar la actualizacion de algun contacto tienes dos opciones:
                     1. Actualizar el numero de telefono
                     2. Actualizar el nombre de contacto
                 """)
-                optionUpdate = input("Ingresa la opcion que quieres: ")
+                println("Ingresa la opcion que quieres: ")
+                var optionUpdate = scala.io.StdIn.readLine()
                 
-                while (optionUpdate != '1' and optionUpdate != '2'):
-                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
-                    optionUpdate = input("Ingresa la opcion que quieres: ")
-                
-                if (optionUpdate == '1'):
-                    numberContact = input("Ingresa el numero de telefono que vas a actualizar: ")
+                while ((optionUpdate != "1") && (optionUpdate != "2")) {
+                    println("Ingresaste un valor erroneo, vuelvelo a intentar")
+                    println("Ingresa la opcion que quieres: ")
+                    optionUpdate = scala.io.StdIn.readLine()
+                }
+                if (optionUpdate == "1") {
+                    println("Ingresa el numero de telefono que vas a actualizar: ")
+                    var numberContact = scala.io.StdIn.readLine()
 
-                    while not check_Input(numberContact):
-                        print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                    while (!(check_Input(numberContact))) {
+                        println("Ingresaste un valor erroneo, vuelvelo a intentar")
                         numberContact = input("Ingresa de nuevo el numero de telefono: ")
-                        
+                    }  
                     update_Contact(numberContact, "0", optionUpdate)
-
-                elif (optionUpdate == '2'):
-                    nameContact = input("Ingresa el nombre del contacto a buscar: ")
+                }
+                else if (optionUpdate == "2"):
+                    println("Ingresa el nombre del contacto a buscar: ")
+                    var nameContact = scala.io.StdIn.readLine()
                     update_Contact("0", nameContact, optionUpdate)    
                 still = True
-
+            }
             elif(option == '4'):
                 print("""
                 Para eliminar un contacto tienes dos opciones:
