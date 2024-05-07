@@ -357,31 +357,38 @@ object Main {
                 }   
                 still = True
             }
-            elif(option == '4'):
-                print("""
+            else if(option == "4") {
+                println("""
                 Para eliminar un contacto tienes dos opciones:
                     1. Eliminar por el numero de telefono
                     2. Eliminar por el nombre de contacto
                 """)
-                optionDel = input("Ingresa la opcion que quieres: ")
+                println("Ingresa la opcion que quieres: ")
+                var optionDel = scala.io.StdIn.readLine()
 
-                while (optionDel != '1' and optionDel != '2'):
-                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
-                    optionDel = input("Ingresa la opcion que quieres: ")
+                while ((optionDel != '1') && (optionDel != '2')) {
+                    println("Ingresaste un valor erroneo, vuelvelo a intentar")
+                    println("Ingresa la opcion que quieres: ")
+                    optionDel = scala.io.StdIn.readLine()
+                }
                 
-                if (optionDel == '1'):
-                    numberContact = input("Ingresa el numero de telefono a buscar: ")
+                if (optionDel == "1") {
+                    println("Ingresa el numero de telefono a buscar: ")
+                    var numberContact = scala.io.StdIn.readLine()
 
-                    while not check_Input(numberContact):
+                    while (!(check_Input(numberContact))) {
                         print("Ingresaste un valor erroneo, vuelvelo a intentar")
-                        numberContact = input("Ingresa el numero de telefono a buscar: ")
-                        
+                        println("Ingresa el numero de telefono a buscar: ")
+                        numberContact = scala.io.StdIn.readLine()
+                    }
                     del_Contact(numberContact, "0", optionDel)
-                elif (optionDel == '2'):
-                    nameContact = input("Ingresa el nombre del contacto a buscar: ")
+                else if (optionDel == "2") {
+                    println("Ingresa el nombre del contacto a buscar: ")
+                    var nameContact = scala.io.StdIn.readLine()
                     del_Contact("numberContact", nameContact, optionDel)
-
+                }
                 still = True
+            }
             elif(option == "5"):
                 still = False
             
