@@ -309,19 +309,21 @@ object Main {
                     var nameContact = scala.io.StdIn.readLine()
                     find_Contact("0", nameContact, optionSearch)
                 }
-                var still = true
+                still = true
             }
-            elif(option == '2'):
-                nameContact = input("Ingresa el nombre del contacto que vas a agregar: ")
-                numberContact = input("Ingresa el numero de telefono: ")
+            else if(option == "2") {
+                println("Ingresa el nombre del contacto que vas a agregar: ")
+                var nameContact = scala.io.StdIn.readLine()
+                println("Ingresa el numero de telefono: ")
+                var numberContact = scala.io.StdIn.readLine()
 
-                while not check_Input(numberContact):
-                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                while (!(check_Input(numberContact))) {
+                    println("Ingresaste un valor erroneo, vuelvelo a intentar")
                     numberContact = input("Ingresa nuevamente el numero de telefono: ")
-
+                }
                 add_Contact(numberContact, nameContact)
                 still = True
-
+            }
             elif(option == '3'):
                 print("""
                 Para realizar la actualizacion de algun contacto tienes dos opciones:
