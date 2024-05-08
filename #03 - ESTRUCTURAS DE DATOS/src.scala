@@ -277,7 +277,8 @@ object Main {
         }
 
 
-        def execute_Option(option: String, still: Boolean): Boolean = {
+        def execute_Option(option: String): Boolean = {
+            var still = true
             if (option == "1") {
                 println("""
                 Para realizar la busqueda de algun contacto tienes dos opciones:
@@ -369,7 +370,7 @@ object Main {
                 while ((optionDel != "1") && (optionDel != "2")) {
                     println("Ingresaste un valor erroneo, vuelvelo a intentar")
                     println("Ingresa la opcion que quieres: ")
-                    optionDel = scala.io.StdIn.readLine()
+                    var optionDel = scala.io.StdIn.readLine()
                 }
                 
                 if (optionDel == "1") {
@@ -382,13 +383,13 @@ object Main {
                         numberContact = scala.io.StdIn.readLine()
                     }
                     del_Contact(numberContact, "0", optionDel)
+                }
                 else if (optionDel == "2") {
                     println("Ingresa el nombre del contacto a buscar: ")
                     var nameContact = scala.io.StdIn.readLine()
                     del_Contact("numberContact", nameContact, optionDel)
                 }
                 still = true
-                }
             }
             else if(option == "5") {
                 still = false
@@ -401,20 +402,10 @@ object Main {
             var x = true
             while(x) {
                 var userOption = welcome_Menu()
-                x = execute_Option(userOption, true)
+                x = execute_Option(userOption)
             }
         }
         
         run()
-
-        //welcome_Menu()
-        //println(check_Input("301423711qw"))
-        //printContacts(mapContacts)
-        //find_Contact("1","Lucho Diaz","2")
-        //add_Contact("3014237116","nicol as riaño")
-        //del_Contact("1","Lucho Diaz","2")
-        //printContacts(mapContacts)
-        //update_Contact("1","Lucho Diaz","2")
-        //printContacts(mapContacts)
     }
 }
