@@ -323,7 +323,7 @@ object Main {
                     numberContact = scala.io.StdIn.readLine()
                 }
                 add_Contact(numberContact, nameContact)
-                still = True
+                still = true
             }
             else if(option == "3") {
                 println("""
@@ -355,7 +355,7 @@ object Main {
                     var nameContact = scala.io.StdIn.readLine()
                     update_Contact("0", nameContact, optionUpdate) 
                 }   
-                still = True
+                still = true
             }
             else if(option == "4") {
                 println("""
@@ -366,7 +366,7 @@ object Main {
                 println("Ingresa la opcion que quieres: ")
                 var optionDel = scala.io.StdIn.readLine()
 
-                while ((optionDel != '1') && (optionDel != '2')) {
+                while ((optionDel != "1") && (optionDel != "2")) {
                     println("Ingresaste un valor erroneo, vuelvelo a intentar")
                     println("Ingresa la opcion que quieres: ")
                     optionDel = scala.io.StdIn.readLine()
@@ -387,17 +387,17 @@ object Main {
                     var nameContact = scala.io.StdIn.readLine()
                     del_Contact("numberContact", nameContact, optionDel)
                 }
-                still = True
+                still = true
                 }
             }
             else if(option == "5") {
-                still = False
+                still = false
             }                
             return still
         }
 
 
-        def run() {
+        def run(): Unit = {
             var x = true
             while(x) {
                 var userOption = welcome_Menu()
