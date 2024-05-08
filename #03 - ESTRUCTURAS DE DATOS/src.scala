@@ -388,22 +388,33 @@ object Main {
                     del_Contact("numberContact", nameContact, optionDel)
                 }
                 still = True
+                }
             }
             else if(option == "5") {
                 still = False
-            }
+            }                
             return still
         }
 
 
+        def run() {
+            var x = true
+            while(x) {
+                var userOption = welcome_Menu()
+                x = execute_Option(userOption, true)
+            }
+        }
+        
+        run()
+
         //welcome_Menu()
         //println(check_Input("301423711qw"))
-        printContacts(mapContacts)
+        //printContacts(mapContacts)
         //find_Contact("1","Lucho Diaz","2")
         //add_Contact("3014237116","nicol as riaño")
         //del_Contact("1","Lucho Diaz","2")
         //printContacts(mapContacts)
-        update_Contact("1","Lucho Diaz","2")
+        //update_Contact("1","Lucho Diaz","2")
         //printContacts(mapContacts)
     }
 }
