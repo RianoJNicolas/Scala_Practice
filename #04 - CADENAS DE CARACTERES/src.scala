@@ -15,5 +15,10 @@ object Main {
         // 3. Operaciones "Aritmeticas"
         val saludoTotal = saludo*3
         println(s"${saludoTotal}\n")
+
+        // 4. Subcadenas
+        val secuencia = "123456789"
+        val primerSub = secuencia.substring(0, 5, 2)
+        println(s"Primera subcadena $primerSub")
     }
 }
