@@ -23,7 +23,14 @@ object Main {
         val thirdSub =  secuencia.substring(2,6)
         println(s"Primera subcadena $primerSub") // Se toma 12345
         println(s"Segunda subcadena $secondSub") // Se toma 456789
-        println(s"Tercera subcadena $thirdSub") // Se toma 456789
+        println(s"Tercera subcadena $thirdSub") // Se toma 3456
 
+        // 5. Indexacion
+        val char1 = final_saludo_1(1)
+        val char2 = final_saludo_1(2)
+        val char3 = final_saludo_1(3)
+        println(s"caracter de saludo 1 = $char1")
+        println(s"caracter de saludo 1 = $char2")
+        println(s"caracter de saludo 1 = $char3")
     }
 }
