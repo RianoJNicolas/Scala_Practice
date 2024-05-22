@@ -18,7 +18,7 @@ object Main {
 
         // 4. Subcadenas
         val secuencia = "123456789"
-        val primerSub = secuencia.substring(0, 5, 2)
+        val primerSub = secuencia.substring(0, 5)
         println(s"Primera subcadena $primerSub")
     }
 }
