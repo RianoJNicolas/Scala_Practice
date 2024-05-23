@@ -23,23 +23,28 @@ object Source {
         val thirdSub =  secuencia.substring(2,6)
         println(s"Primera subcadena $primerSub") // Se toma 12345
         println(s"Segunda subcadena $secondSub") // Se toma 456789
-        println(s"Tercera subcadena $thirdSub") // Se toma 3456
+        println(s"Tercera subcadena $thirdSub \n") // Se toma 3456
 
         // 5. Indexacion
         val char1 = final_saludo_1(1)
         val char2 = final_saludo_1(2)
         val char3 = final_saludo_1(3)
         println(s"caracter de saludo 1 = $char1")
-        println(s"caracter de saludo 1 = $char2")
-        println(s"caracter de saludo 1 = $char3")
+        println(s"caracter de saludo 2 = $char2")
+        println(s"caracter de saludo 3 = $char3 \n")
 
         // 6. Longitud
         val lenghtStr = final_saludo_1.length()
-        println(s"Longitud del saludo es $lenghtStr")
+        println(s"Longitud del saludo es $lenghtStr \n")
 
         // 7. Recorrido
+        println("Recorrido de Str - Forma 1: Ciclo for")
         for (caracter <- final_saludo_1) {
             println(s"Recorriendo el String $final_saludo_1 -> $caracter")
+        }
+        println("\nRecorrido de Str - Forma 2: Metodo foreach")
+        final_saludo_1.foreach {
+            caracter => println(s"Caracter: $caracter")
         }
     }
 }
