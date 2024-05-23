@@ -1,4 +1,4 @@
-object Main {
+object Source {
     def main(args: Array[String]): Unit = {
         // OPERACIONES CON CADENAS DE CARACTERES
 
@@ -32,5 +32,9 @@ object Main {
         println(s"caracter de saludo 1 = $char1")
         println(s"caracter de saludo 1 = $char2")
         println(s"caracter de saludo 1 = $char3")
+
+        // 6 Longitud
+        val lenghtStr = final_saludo_1.length()
+        println(s"Longitud del saludo es $lenghtStr")
     }
 }
