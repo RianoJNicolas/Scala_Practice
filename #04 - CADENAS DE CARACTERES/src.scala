@@ -33,8 +33,13 @@ object Source {
         println(s"caracter de saludo 1 = $char2")
         println(s"caracter de saludo 1 = $char3")
 
-        // 6 Longitud
+        // 6. Longitud
         val lenghtStr = final_saludo_1.length()
         println(s"Longitud del saludo es $lenghtStr")
+
+        // 7. Recorrido
+        for (caracter <- final_saludo_1) {
+            println(s"Recorriendo el String $final_saludo_1 -> $caracter")
+        }
     }
 }
