@@ -52,5 +52,11 @@ object Source {
         val salMinus = salMayus.toLowerCase()
         println(s"\nSaludo en Mayuscula -> $salMayus")
         println(s"Saludo en Minuscula -> $salMinus \n")
+
+        // 9. Reemplazo
+        val newName = final_saludo_1.replace("X", "Z")
+        println(s"Nuevo saludo = $newName")
+        val newName2 = final_saludo_1.replaceAll("Mr X", "Señor X")
+        println(s"Nuevo saludo = $newName2")
     }
 }
