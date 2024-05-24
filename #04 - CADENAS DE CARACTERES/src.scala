@@ -46,5 +46,11 @@ object Source {
         final_saludo_1.foreach {
             caracter => println(s"Caracter: $caracter")
         }
+
+        // 8. Mayusculas y Minusculas
+        val salMayus = final_saludo_1.toUpperCase()
+        val salMinus = salMayus.toLowerCase()
+        println(s"\nSaludo en Mayuscula -> $salMayus")
+        println(s"Saludo en Minuscula -> $salMinus \n")
     }
 }
