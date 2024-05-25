@@ -69,5 +69,16 @@ object Source {
         println(s"Lista de Strings -> $myStringList.toString()")
         val myString = myStringList.mkString(", ")
         println(s"Strings unidos -> $myString \n")
+
+        // 12. Verificacion/Contiene 
+        val word = "scala"
+        val subChar = "al"
+        println(s"String Base -> ${word}")
+        if (word.contains(subChar)) {
+            println(s"la palabra '${word}' posee la cadena '${subChar}'\n")
+        }
+        else{
+            println(s"la palabra '${word}' NO posee la cadena '${subChar}'\n")
+        }
     }
 }
