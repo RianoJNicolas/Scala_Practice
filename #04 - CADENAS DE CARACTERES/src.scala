@@ -60,7 +60,9 @@ object Source {
         println(s"Nuevo saludo = $newName2 \n")
 
         // 10. Division o Separacion
-        
+        println(s"Frase Inicial -> $final_saludo_1")
+        val divSal = final_saludo_1.split(",")
+        println(s"Resultado de dividir -> ${divSal.toList} \n")
         
         // 11. Union
         val myStringList = List("uno", "dos", "tres", "cuatro")
