@@ -57,6 +57,15 @@ object Source {
         val newName = final_saludo_1.replace("X", "Z")
         println(s"Nuevo saludo = $newName")
         val newName2 = final_saludo_1.replaceAll("Mr X", "Señor X")
-        println(s"Nuevo saludo = $newName2")
+        println(s"Nuevo saludo = $newName2 \n")
+
+        // 10. Division o Separacion
+        
+        
+        // 11. Union
+        val myStringList = List("uno", "dos", "tres", "cuatro")
+        println(s"Lista de Strings -> $myStringList.toString()")
+        val myString = myStringList.mkString(", ")
+        println(s"Strings unidos -> $myString \n")
     }
 }
