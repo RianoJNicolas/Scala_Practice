@@ -80,5 +80,11 @@ object Source {
         else{
             println(s"la palabra '${word}' NO posee la cadena '${subChar}'\n")
         }
+
+        // 13. Eliminar espacios en Blanco
+        val saludoNoTrim = "     Hola, Mr X....         "
+        println(s"Sin trimeo -> '${saludoNoTrim}'")
+        val saludoTrim = saludoNoTrim.trim
+        println(s"Con trimeo -> '${saludoTrim}'\n")
     }
 }
