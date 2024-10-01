@@ -164,27 +164,26 @@ object Source {
             else {
                 println(s"${palabra1} y ${palabra2} NO son anagramas")
             }
+
+            // Seccion Isograma
+            val es_isograma1 = isograma(palabra1)
+            val es_isograma2 = isograma(palabra2)
+
+            if (es_isograma1) {
+                print(s"${palabra1}, si es isograma")
+            }
+            else {
+                print(s"${palabra1}, NO es isograma")
+            }
+            
+            if (es_isograma2) {
+                print(s"${palabra2}, es isograma")
+            }
+            else{
+                print(s"${palabra2}, NO es isograma")
+            }
         }
         
         run()
-    
-    
-    
-        /*
-    
-
-    # Seccion Isograma
-    es_isograma1 = isograma(palabra1)
-    es_isograma2 = isograma(palabra2)
-
-    if es_isograma1:
-        print(f'{palabra1}, si es isograma')
-    else:
-        print(f'{palabra1}, NO es isograma')
-    
-    if es_isograma2:
-        print(f'{palabra2}, es isograma')
-    else:
-        print(f'{palabra2}, NO es isograma')*/
     }
 }
