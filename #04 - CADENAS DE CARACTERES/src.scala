@@ -115,7 +115,25 @@ object Source {
             return palabra1_sorted == palabra2_sorted
         }
 
+        def isograma(palabra: String): Boolean = {
+            val palabra_clean = palabra.trim.toLowerCase()
+            // Crear un set vacio
+            var set_letters = Set[Char]()
+            for (letter <- palabra_clean) {
+                if (set_letters.contains(letter)) {
+                    println(s"Se repite la letra ${letter}")
+                    return false
+                }
+                else {
+                    set_letters + letter
+                }
+            }
+            return true
+        }
+
+
         println(palindromo("ama"))
         println(anagrama("roma","sosa"))
+        println(isograma("      moso     "))
     }
 }
