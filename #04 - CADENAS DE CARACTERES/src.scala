@@ -106,6 +106,16 @@ object Source {
             }
         }
 
+        def anagrama(palabra1: String, palabra2: String): Boolean = {
+            val palabra1_clean = palabra1.trim.toLowerCase()
+            val palabra2_clean = palabra2.trim.toLowerCase()
+            // organizo en orden alfabetico los caracteres del String en otro String
+            val palabra1_sorted = palabra1_clean.toCharArray.sorted.mkString("")
+            val palabra2_sorted = palabra2_clean.toCharArray.sorted.mkString("")
+            return palabra1_sorted == palabra2_sorted
+        }
+
         println(palindromo("ama"))
+        println(anagrama("roma","sosa"))
     }
 }
