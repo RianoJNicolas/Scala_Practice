@@ -155,6 +155,15 @@ object Source {
             else {
                 print(s"${palabra2}, NO es palindroma")
             }
+
+            // Seccion Anagrama
+            val es_anagrama = anagrama(palabra1, palabra2)
+            if (es_anagrama) {
+                println(s"${palabra1} y ${palabra2} son anagramas")
+            }
+            else {
+                println(s"${palabra1} y ${palabra2} NO son anagramas")
+            }
         }
         
         run()
@@ -162,12 +171,7 @@ object Source {
     
     
         /*
-    # Seccion Anagrama
-    es_anagrama = anagrama(palabra1, palabra2)
-    if es_anagrama:
-        print(f'{palabra1} y {palabra2} son anagramas')
-    else:
-        print(f'{palabra1} y {palabra2} NO son anagramas')
+    
 
     # Seccion Isograma
     es_isograma1 = isograma(palabra1)
