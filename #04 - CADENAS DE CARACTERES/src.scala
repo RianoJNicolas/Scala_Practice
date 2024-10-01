@@ -86,5 +86,13 @@ object Source {
         println(s"Sin trimeo -> '${saludoNoTrim}'")
         val saludoTrim = saludoNoTrim.trim
         println(s"Con trimeo -> '${saludoTrim}'\n")
+
+        // DIFICULTAD EXTRA
+        def palindromo(palabra: String): String = {
+            var palabra_inver = palabra.trim.toLowerCase().reverse
+            return palabra_inver 
+        }
+
+        println(palindromo("hola, mundo"))
     }
 }
