@@ -88,11 +88,24 @@ object Source {
         println(s"Con trimeo -> '${saludoTrim}'\n")
 
         // DIFICULTAD EXTRA
-        def palindromo(palabra: String): String = {
+        def palindromo(palabra: String): Boolean = {
             var palabra_inver = palabra.trim.toLowerCase().reverse
-            return palabra_inver 
+            val numeros = Seq("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")
+
+            try {
+                for (index <- numeros) {
+                    if (palabra.contains(index)) {
+                        throw new IllegalArgumentException("Por favor ingresa una palabra, por lo menos hay un número dentro de ella")
+                    }
+                }
+                return palabra_inver == palabra
+            }
+            catch {
+                case e: IllegalArgumentException => println(s"Error: ${e.getMessage}")
+                return false
+            }
         }
 
-        println(palindromo("hola, mundo"))
+        println(palindromo("ama"))
     }
 }
