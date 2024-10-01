@@ -131,9 +131,56 @@ object Source {
             return true
         }
 
+        def run(): Unit = {
+            println("Ingresa la primer palabra: ")
+            val palabra1 = scala.io.StdIn.readLine()
+            
+            println("Ingresa la segunda palabra: ")
+            val palabra2 = scala.io.StdIn.readLine()
 
-        println(palindromo("ama"))
-        println(anagrama("roma","sosa"))
-        println(isograma("      moso     "))
+            // Seccion Palindromo
+            val es_palindromo1 = palindromo(palabra1)
+            val es_palindromo2 = palindromo(palabra2)
+
+            if (es_palindromo1) {
+                println(s"${palabra1}, es palindroma")
+            }
+            else {
+                println(s"${palabra1}, NO es palindroma")
+            }
+    
+            if (es_palindromo2) {
+                print(s"${palabra2}, es palindroma")
+            }
+            else {
+                print(s"${palabra2}, NO es palindroma")
+            }
+        }
+        
+        run()
+    
+    
+    
+        /*
+    # Seccion Anagrama
+    es_anagrama = anagrama(palabra1, palabra2)
+    if es_anagrama:
+        print(f'{palabra1} y {palabra2} son anagramas')
+    else:
+        print(f'{palabra1} y {palabra2} NO son anagramas')
+
+    # Seccion Isograma
+    es_isograma1 = isograma(palabra1)
+    es_isograma2 = isograma(palabra2)
+
+    if es_isograma1:
+        print(f'{palabra1}, si es isograma')
+    else:
+        print(f'{palabra1}, NO es isograma')
+    
+    if es_isograma2:
+        print(f'{palabra2}, es isograma')
+    else:
+        print(f'{palabra2}, NO es isograma')*/
     }
 }
