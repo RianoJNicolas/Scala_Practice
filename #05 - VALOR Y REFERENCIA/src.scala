@@ -1,7 +1,17 @@
-###################################
-# Dev: rianojnicolas              #
-###################################
+/*###################################
+#   Dev: rianojnicolas              #
+###################################*/
 
+object Source {
+    def main(args: Array[String]): Unit = {
+
+        // 1. Asignacion de variables por valor y referencia
+        // 1.1 Variables por valor
+        //      Para el lenguaje de programación Scala, las variables que se pueden asignar por valor son:
+        //      - Los tipos primitivos (Int, Float, String, Boolean, etc)
+
+    }
+}
 /*# 1. Asignacion de variables por valor y referencia
 
 ## 1.1 Variables por valor
