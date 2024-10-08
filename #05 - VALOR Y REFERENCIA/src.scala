@@ -9,7 +9,13 @@ object Source {
         // 1.1 Variables por valor
         //      Para el lenguaje de programación Scala, las variables que se pueden asignar por valor son:
         //      - Los tipos primitivos (Int, Float, String, Boolean, etc)
-
+        
+        var myIntA = 10
+        var myIntB = myIntA
+        myIntB = 20
+        myIntA = 50
+        println(myIntA)
+        println(myIntB)
     }
 }
 /*# 1. Asignacion de variables por valor y referencia
