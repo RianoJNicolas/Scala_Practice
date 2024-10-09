@@ -13,7 +13,7 @@ object Source {
         //      b. val es un tipo de variable que se puede asignar por valor y que no puede ser modificada
         
         println("1. Asignacion de variables por valor")
-        
+
         // var
         println("1.1.a Asignacion de variables por valor y referencia con definicion var")
         var myIntA = 10
@@ -31,21 +31,20 @@ object Source {
         // myIntC = 50 // Error: val cannot be reassigned
         println(myIntC)
         println(myIntD)
+
+        // ## 1.2 Variables por referencia
+        //      Generalmente en python, los valores que se pueden asignar por referencia son los tipos de datos que no son primiticos
+        //      Por ejemplo: Listas, tuplas, diccionarios, set, etc
+        //      Se traduce a que estos valores por referencia heredan la posición de memoria, parece como si fueran los punteros de C++
+
+        var my_listA = List(10, 20)
+        var my_listB = List(30, 40)
+        my_listB = my_listA
+        print(my_listA)
+        print(my_listB)
     }
 }
 /*# 1. Asignacion de variables por valor y referencia
-
-## 1.1 Variables por valor
-##      Generalmente en python, los valores que se pueden asignar por valor son los tipos de datos primitivos
-##      Por ejemplo: Int, float, string y booleanos
-##      Se puede decir que se puede hacer una copia del valor de una variable
-myIntA = 10
-myIntB = myIntA
-#myIntB = 20
-myIntA = 50
-print(myIntA)
-print(myIntB)
-
 
 ## 1.2 Variables por referencia
 ##      Generalmente en python, los valores que se pueden asignar por referencia son los tipos de datos que no son primiticos
