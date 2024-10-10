@@ -37,11 +37,11 @@ object Source5 {
         //      Por ejemplo: Listas, tuplas, diccionarios, set, etc
         //      Se traduce a que estos valores por referencia heredan la posición de memoria, parece como si fueran los punteros de C++
 
-        var my_listA = List(10, 20)
-        var my_listB = List(30, 40)
+        var my_listA = Set(10, 20)
+        var my_listB = Set(30, 40)
         println("my_listB - inicial : " + my_listB)
         my_listB = my_listA
-        print(my_listA)
+        println(my_listA)
         println("my_listB - Finaal : " + my_listB)
     }
 }
