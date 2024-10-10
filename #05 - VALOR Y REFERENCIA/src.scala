@@ -2,7 +2,7 @@
 #   Dev: rianojnicolas              #
 ###################################*/
 
-object Source {
+object Source5 {
     def main(args: Array[String]): Unit = {
 
         // 1. Asignacion de variables por valor y referencia
@@ -39,9 +39,10 @@ object Source {
 
         var my_listA = List(10, 20)
         var my_listB = List(30, 40)
+        println("my_listB - inicial : " + my_listB)
         my_listB = my_listA
         print(my_listA)
-        print(my_listB)
+        println("my_listB - Finaal : " + my_listB)
     }
 }
 /*# 1. Asignacion de variables por valor y referencia
