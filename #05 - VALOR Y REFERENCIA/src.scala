@@ -57,20 +57,19 @@ object Source5 {
         // Se utiliza una variable de tipo val "inmutable" para definir una referencia a un objeto. Pero
         // en este caso, el objeto es mutable, por lo que puedes modificar su contenido.
         // En este caso, la referencia apunta al mismo objeto que el objeto original.
-
         val array1 = ArrayBuffer(1, 2, 3)
         val array2 = array1  // Ambas referencias apuntan al mismo objeto
-
         array2 += 4  // Modificamos el objeto referenciado
         println(array1)  // Imprime ArrayBuffer(1, 2, 3, 4)
 
         // Pero si utilizamos una variable de tipo var, la referencia apunta a un objeto diferente.
-        var array3 = array1  // La referencia apunta a un objeto diferente
-        array3 += 4  // Modificamos el objeto referenciado
-        println(array1)  // Imprime ArrayBuffer(1, 2, 3, 4)
-        println(array3)  // Imprime ArrayBuffer(1, 2, 3, 4)
+        var array3 = ArrayBuffer(4,5,6)  // La referencia apunta a un objeto diferente
+        var array4 = array3  // La referencia apunta a un objeto diferente
+        array4 += 7  // Modificamos el objeto referenciado
+        println(array3)  // Imprime ArrayBuffer(4, 5, 6, 7)
+        println(array4)  // Imprime ArrayBuffer(4, 5, 6, 7)
 
-        
+
         var my_listA = List(10, 20)
         var my_listB = my_listA
         println("my_listA - inicial : " + my_listA)
