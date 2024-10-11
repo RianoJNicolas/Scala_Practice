@@ -24,20 +24,20 @@ object Source5 {
         
         // 1.1 Variables por valor
         
-        println("1. Asignacion de variables por valor")
+        println("1. Asignacion de variables por valor - para tipos primitivos")
 
         // var
-        println("1.1.a Asignacion de variables por valor y referencia con definicion var")
+        println("1.1.a Asignacion de variables por valor con definicion var")
         var myIntA = 10
         var myIntB = myIntA
-        myIntB = 20
+        //myIntB = 20
         myIntA = 50
         println(myIntA)
         println(myIntB)
         println("\n")
 
         // val
-        println("1.1.b Asignacion de variables por valor y referencia con definicion *val*")
+        println("1.1.b Asignacion de variables por valorcon definicion val")
         val myIntC = 10
         val myIntD = myIntC
         // myIntD = 20 // Error: val cannot be reassigned
