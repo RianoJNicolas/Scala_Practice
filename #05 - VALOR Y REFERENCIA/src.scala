@@ -46,11 +46,31 @@ object Source5 {
         println(myIntD)
         println("\n")
 
-        // ## 1.2 Variables por referencia
-        //      Generalmente en scala, los valores que se pueden asignar por referencia son los tipos de datos que no son primiticos
-        //      Por ejemplo: Listas, tuplas, diccionarios, set, etc
-        //      Se traduce a que estos valores por referencia heredan la posición de memoria, parece como si fueran los punteros de C++
+        // 1.2 Variables por referencia
+        //   Como se explicó anteriormente, en Scala no existe la dinamica de variables por referencia, pero a nivel
+        //   de objetos, las variables son referencias a objetos. Es decir que una copia del objeto es la referencia
+        //   al objeto, no el objeto completo.
+        //   Por ejemplo: Cuando se trabaja con objetos (especialmente los mutables), aunque técnicamente se están 
+        //       pasando referencias por valor, la referencia apunta al mismo objeto.
+        //   Ahora a nivel codigo sería algo así:
 
+        // Se utiliza una variable de tipo val "inmutable" para definir una referencia a un objeto. Pero
+        // en este caso, el objeto es mutable, por lo que puedes modificar su contenido.
+        // En este caso, la referencia apunta al mismo objeto que el objeto original.
+
+        val array1 = ArrayBuffer(1, 2, 3)
+        val array2 = array1  // Ambas referencias apuntan al mismo objeto
+
+        array2 += 4  // Modificamos el objeto referenciado
+        println(array1)  // Imprime ArrayBuffer(1, 2, 3, 4)
+
+        // Pero si utilizamos una variable de tipo var, la referencia apunta a un objeto diferente.
+        var array3 = array1  // La referencia apunta a un objeto diferente
+        array3 += 4  // Modificamos el objeto referenciado
+        println(array1)  // Imprime ArrayBuffer(1, 2, 3, 4)
+        println(array3)  // Imprime ArrayBuffer(1, 2, 3, 4)
+
+        
         var my_listA = List(10, 20)
         var my_listB = my_listA
         println("my_listA - inicial : " + my_listA)
@@ -61,11 +81,7 @@ object Source5 {
 
 
 
-        val array1 = ArrayBuffer(1, 2, 3)
-        val array2 = array1  // Ambas referencias apuntan al mismo objeto
-
-        array2 += 4  // Modificamos el objeto referenciado
-        println(array1)  // Imprime ArrayBuffer(1, 2, 3, 4)
+    
 
     }
 }
