@@ -37,7 +37,7 @@ object Source5 {
         println("\n")
 
         // val
-        println("1.1.b Asignacion de variables por valorcon definicion val")
+        println("1.1.b Asignacion de variables por valor con definicion val")
         val myIntC = 10
         val myIntD = myIntC
         // myIntD = 20 // Error: val cannot be reassigned
@@ -47,13 +47,14 @@ object Source5 {
         println("\n")
 
         // 1.2 Variables por referencia
+        println("1.2 Variables por referencia")
         //   Como se explicó anteriormente, en Scala no existe la dinamica de variables por referencia, pero a nivel
         //   de objetos, las variables son referencias a objetos. Es decir que una copia del objeto es la referencia
         //   al objeto, no el objeto completo.
         //   Por ejemplo: Cuando se trabaja con objetos (especialmente los mutables), aunque técnicamente se están 
         //       pasando referencias por valor, la referencia apunta al mismo objeto.
         //   Ahora a nivel codigo sería algo así:
-
+        println("1.2.a. Variables por referencia con definicion val, objeto mutable:")
         // Se utiliza una variable de tipo val "inmutable" para definir una referencia a un objeto. Pero
         // en este caso, el objeto es mutable, por lo que puedes modificar su contenido.
         // En este caso, la referencia apunta al mismo objeto que el objeto original.
@@ -61,7 +62,8 @@ object Source5 {
         val array2 = array1  // Ambas referencias apuntan al mismo objeto
         array2 += 4  // Modificamos el objeto referenciado
         println(array1)  // Imprime ArrayBuffer(1, 2, 3, 4)
-
+        
+        println("1.2.b. Variables por referencia con definicion var, objeto mutable:")
         // Pero si utilizamos una variable de tipo var, la referencia tambien apunta al objeto original.
         var array3 = ArrayBuffer(4,5,6)  
         var array4 = array3  // La referencia apunta al mismo objeto
@@ -69,6 +71,7 @@ object Source5 {
         println(array3)  // Imprime ArrayBuffer(4, 5, 6, 7)
         println(array4)  // Imprime ArrayBuffer(4, 5, 6, 7)
 
+        println("1.2.c. Variables por referencia con definicion var, objeto inmutable:")
         // Pero si utilizamos una variable de tipo var, con un objeto Lista que es inmutable,
         // la referencia sigue apuntando al objeto original. pero si "modificamos el objeto"
         // referenciado, la referencia no cambia porque este tipo de objeto no permite modificaciones. Por lo tanto,
@@ -81,22 +84,24 @@ object Source5 {
         println("my_listA - Final : " + my_listA) // Imprime List(10, 20)
         println("my_listB - Final : " + my_listB) // Imprime List(10, 20, 50)
 
+        // 2. Ejemplos de funciones por valor y por referencia
+        println("2. Ejemplos de funciones por valor y por referencia")
+        
+        // 2.1 Funciones con datos por valor
+        println("2.1 Funciones con datos por valor")
+        def fillCoupValue(fill: Int): Int = {
+            val fill = 99
+            println(fill)
+            return fill
+        }
+        
+        val my_fill = 50
+        fillCoupValue(my_fill)
+        println(my_fill)
 
     }
 }
 /*
-# 2. Ejemplos de funciones por valor y por referencia
-
-## 2.1 Funciones con datos por valor
-
-def fillCoupValue(fill):
-    fill = 99
-    print(fill)
-    return fill
-
-my_fill = 50
-fillCoupValue(my_fill)
-print(my_fill)
 
 ## 2.2 Funciones con datos por referencia
 def fillCoupHistory(fill):
