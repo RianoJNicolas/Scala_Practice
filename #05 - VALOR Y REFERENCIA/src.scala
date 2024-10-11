@@ -1,16 +1,28 @@
 /*###################################
 #   Dev: rianojnicolas              #
 ###################################*/
+import scala.collection.mutable.ArrayBuffer
 
 object Source5 {
     def main(args: Array[String]): Unit = {
 
         // 1. Asignacion de variables por valor y referencia
+    
+        // En Scala, todas las variables y parámetros de funciones se pasan por valor.
+        // Esto significa que siempre se pasa una copia de lo que contiene la variable
+        //  a. Para tipos primitivos como Int, Double, Boolean, etc., la copia es simplemente el valor en sí.
+        //  b. Para objetos (listas, clases, arrays, etc.), la copia es la referencia al objeto, no el objeto
+        //     completo. Entonces, aunque la referencia se pasa por valor, ambas variables (la original y la
+        //     copia) apuntan al mismo objeto en memoria.
+        //
+        // Aunque Scala fomenta el uso de inmutabilidad (con val), las variables mutables (definidas con var)
+        // permiten cambiar la referencia que almacenan, lo que significa que puedes hacer que una variable
+        // apunte a un objeto diferente.
+        // 
+        // Mutabilidad e inmutabilidad: Si bien las variables val son inmutables (no pueden cambiar de 
+        // referencia), si el objeto que apuntan es mutable, el contenido del objeto puede cambiar.
+        
         // 1.1 Variables por valor
-        //      Para el lenguaje de programación Scala, las variables se pueden asignar
-        //      por valor con var y con val
-        //      a. var es un tipo de variable que se puede asignar por valor
-        //      b. val es un tipo de variable que se puede asignar por valor y que no puede ser modificada
         
         println("1. Asignacion de variables por valor")
 
@@ -22,6 +34,7 @@ object Source5 {
         myIntA = 50
         println(myIntA)
         println(myIntB)
+        println("\n")
 
         // val
         println("1.1.b Asignacion de variables por valor y referencia con definicion *val*")
@@ -31,18 +44,29 @@ object Source5 {
         // myIntC = 50 // Error: val cannot be reassigned
         println(myIntC)
         println(myIntD)
+        println("\n")
 
         // ## 1.2 Variables por referencia
-        //      Generalmente en python, los valores que se pueden asignar por referencia son los tipos de datos que no son primiticos
+        //      Generalmente en scala, los valores que se pueden asignar por referencia son los tipos de datos que no son primiticos
         //      Por ejemplo: Listas, tuplas, diccionarios, set, etc
         //      Se traduce a que estos valores por referencia heredan la posición de memoria, parece como si fueran los punteros de C++
 
-        var my_listA = Set(10, 20)
-        var my_listB = Set(30, 40)
+        var my_listA = List(10, 20)
+        var my_listB = my_listA
+        println("my_listA - inicial : " + my_listA)
         println("my_listB - inicial : " + my_listB)
-        my_listB = my_listA
-        println(my_listA)
-        println("my_listB - Finaal : " + my_listB)
+        my_listB :+ 50
+        println("my_listA - Final : " + my_listA)
+        println("my_listB - Final : " + my_listB)
+
+
+
+        val array1 = ArrayBuffer(1, 2, 3)
+        val array2 = array1  // Ambas referencias apuntan al mismo objeto
+
+        array2 += 4  // Modificamos el objeto referenciado
+        println(array1)  // Imprime ArrayBuffer(1, 2, 3, 4)
+
     }
 }
 /*# 1. Asignacion de variables por valor y referencia
