@@ -86,7 +86,7 @@ object Source5 {
 
         // 2. Ejemplos de funciones por valor y por referencia
         println("2. Ejemplos de funciones por valor y por referencia")
-        
+
         // 2.1 Funciones con datos por valor
         println("2.1 Funciones con datos por valor")
         def fillCoupValue(fill: Int): Int = {
@@ -99,24 +99,32 @@ object Source5 {
         fillCoupValue(my_fill)
         println(my_fill)
 
+        //2.2 Funciones con datos por referencia
+        println("2.2 Funciones con datos por referencia")
+        // Como se explicó anteriormente, en Scala no existe la dinamica de variables por referencia o de
+        // funciones con datos por referencia, pero a nivel de objetos, las variables son referencias a objetos.
+        // Es decir que una copia del objeto es la referencia al objeto, no el objeto completo.
+        
+        def fillCoupHistory(fill: ArrayBuffer[Int]):ArrayBuffer[Int] = {
+            fill += 25 
+            
+            val fill_a = fill
+            fill_a += 45
+
+            println(fill)
+            println(fill_a)
+            return fill
+        }
+
+        val my_fill_history = ArrayBuffer(0, 10, 5, 50, 20)
+        fillCoupHistory(my_fill_history)
+        println(my_fill_history)
+
     }
 }
 /*
 
-## 2.2 Funciones con datos por referencia
-def fillCoupHistory(fill):
-    fill.append(25)
-    
-    fill_a = fill
-    fill_a.append(45)
 
-    print(fill)
-    print(fill_a)
-    return fill
-
-my_fill_history = [0, 10, 5, 50, 20]
-fillCoupHistory(my_fill_history)
-print(my_fill_history)
 
 # Dificultad Extra
 # Caso 1: Parametros por valor
