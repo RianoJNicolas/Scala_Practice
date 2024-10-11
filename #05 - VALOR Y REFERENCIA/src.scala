@@ -62,43 +62,29 @@ object Source5 {
         array2 += 4  // Modificamos el objeto referenciado
         println(array1)  // Imprime ArrayBuffer(1, 2, 3, 4)
 
-        // Pero si utilizamos una variable de tipo var, la referencia apunta a un objeto diferente.
-        var array3 = ArrayBuffer(4,5,6)  // La referencia apunta a un objeto diferente
-        var array4 = array3  // La referencia apunta a un objeto diferente
+        // Pero si utilizamos una variable de tipo var, la referencia tambien apunta al objeto original.
+        var array3 = ArrayBuffer(4,5,6)  
+        var array4 = array3  // La referencia apunta al mismo objeto
         array4 += 7  // Modificamos el objeto referenciado
         println(array3)  // Imprime ArrayBuffer(4, 5, 6, 7)
         println(array4)  // Imprime ArrayBuffer(4, 5, 6, 7)
 
-
+        // Pero si utilizamos una variable de tipo var, con un objeto Lista que es inmutable,
+        // la referencia sigue apuntando al objeto original. pero si "modificamos el objeto"
+        // referenciado, la referencia no cambia porque este tipo de objeto no permite modificaciones. Por lo tanto,
+        // el objeto original sigue siendo el mismo objeto y se crea una copia nueva con la modificacion.
         var my_listA = List(10, 20)
-        var my_listB = my_listA
-        println("my_listA - inicial : " + my_listA)
-        println("my_listB - inicial : " + my_listB)
-        my_listB :+ 50
-        println("my_listA - Final : " + my_listA)
-        println("my_listB - Final : " + my_listB)
+        var my_listB = my_listA  // La referencia apunta al mismo objeto
+        println("my_listA - inicial : " + my_listA) // Imprime List(10, 20)
+        println("my_listB - inicial : " + my_listB) // Imprime List(10, 20)
+        my_listB :+ 50 // Modificamos el objeto referenciado, crea un NUEVO objeto List(10, 20, 50)
+        println("my_listA - Final : " + my_listA) // Imprime List(10, 20)
+        println("my_listB - Final : " + my_listB) // Imprime List(10, 20, 50)
 
-
-
-    
 
     }
 }
-/*# 1. Asignacion de variables por valor y referencia
-
-## 1.2 Variables por referencia
-##      Generalmente en python, los valores que se pueden asignar por referencia son los tipos de datos que no son primiticos
-##      Por ejemplo: Listas, tuplas, diccionarios, set, etc
-##      Se traduce a que estos valores por referencia heredan la posición de memoria, parece como si fueran los punteros de C++
-
-my_setA = {10, 20}
-#my_setB = {30, 40}
-my_setB = my_setA
-my_setB.add(30)
-print(my_setA)
-print(my_setB)
-
-
+/*
 # 2. Ejemplos de funciones por valor y por referencia
 
 ## 2.1 Funciones con datos por valor
