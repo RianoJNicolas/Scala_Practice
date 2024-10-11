@@ -90,14 +90,18 @@ object Source5 {
         // 2.1 Funciones con datos por valor
         println("2.1 Funciones con datos por valor")
         def fillCoupValue(fill: Int): Int = {
-            val fill = 99
-            println(fill)
-            return fill
+            // El parametro fill Scala lo toma por valor, por lo que no se puede modificar
+            // Por lo tanto, creamos una variable mutable
+            var modifiedFill = fill 
+            val fill1 = 99 
+            modifiedFill = fill1 // Modificamos el valor de la variable
+            println(modifiedFill) // Imprime 99
+            return modifiedFill // Devuelve el valor 99
         }
         
-        val my_fill = 50
-        fillCoupValue(my_fill)
-        println(my_fill)
+        var my_fill = 50
+        fillCoupValue(my_fill) // Modificamos el valor de la variable con el valor 99
+        println(my_fill) // Imprime 50
 
         //2.2 Funciones con datos por referencia
         println("2.2 Funciones con datos por referencia")
