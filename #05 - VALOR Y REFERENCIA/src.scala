@@ -157,44 +157,20 @@ object Source5 {
             println("Los valores originales son: ")
             println(my_val_1)
             println(my_val_2)
+
+            // Caso 2: Parametros por referencia
+            var my_ref_1 = ArrayBuffer(10, 30, 50)
+            var my_ref_2 = ArrayBuffer(20, 40, 60)
+            val (my_ref_3, my_ref_4) = byRefer(my_ref_1, my_ref_2)
+            println("Los valores retornados son: ")
+            println(my_ref_3)
+            println(my_ref_4)
+            println("Los valores originales son: ")
+            println(my_ref_1)
+            println(my_ref_2)
+
         }
         
         run()
     }
 }
-/*
-
-def run():
-    # Caso 1: Parametros por valor
-    my_val_1 = 10
-    my_val_2 = 20
-    print("Los valores inciales son: ")
-    print(my_val_1)
-    print(my_val_2)
-    my_val_3, my_val_4 = byValue(my_val_1, my_val_2)
-    print("Los valores retornados son: ")
-    print(my_val_3)
-    print(my_val_4)
-    print("Los valores originales son: ")
-    print(my_val_1)
-    print(my_val_2)
-
-    # Caso 2: Parametros por referencia
-    my_ref_1 = [10, 30, 50]
-    my_ref_2 = [20, 40, 60]
-    print("Los valores inciales son: ")
-    print(my_ref_1)
-    print(my_ref_2)
-    my_ref_3, my_ref_4 = byValue(my_ref_1, my_ref_2)
-    print("Los valores retornados son: ")
-    print(my_ref_3)
-    print(my_ref_4)
-    print("Los valores originales son: ")
-    print(my_ref_1)
-    print(my_ref_2)
-
-
-
-if __name__ == '__main__':
-    run()
-    */
