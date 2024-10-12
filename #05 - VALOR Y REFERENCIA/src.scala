@@ -134,24 +134,22 @@ object Source5 {
             b_mod = c
             return (a_mod, b_mod)
         }
+
+        // Caso 2: Parametros por referencia
+        def byRefer(a: ArrayBuffer[Int], b: ArrayBuffer[Int]):(ArrayBuffer[Int], ArrayBuffer[Int]) = {
+            var a_mod = a
+            var b_mod = b
+            val c = a_mod
+            a_mod = b_mod
+            b_mod = c
+            return (a_mod, b_mod)
+        }
+        
         
         
     }
 }
 /*
-
-
-
-
-
-
-# Caso 2: Parametros por referencia
-def byRefer(a, b):
-    c = a
-    a = b
-    b = c
-    return a, b
-
 
 def run():
     # Caso 1: Parametros por valor
