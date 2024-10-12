@@ -145,8 +145,21 @@ object Source5 {
             return (a_mod, b_mod)
         }
         
+        // Ejecucion final
+        def run(): Unit = {
+            // Caso 1: Parametros por valor
+            var my_val_1 = 10
+            var my_val_2 = 20
+            val (my_val_3, my_val_4) = byValue(my_val_1, my_val_2)
+            println("Los valores retornados son: ")
+            println(my_val_3)
+            println(my_val_4)
+            println("Los valores originales son: ")
+            println(my_val_1)
+            println(my_val_2)
+        }
         
-        
+        run()
     }
 }
 /*
