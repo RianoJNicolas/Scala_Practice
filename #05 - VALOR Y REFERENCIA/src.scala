@@ -123,20 +123,26 @@ object Source5 {
         val my_fill_history = ArrayBuffer(0, 10, 5, 50, 20)
         fillCoupHistory(my_fill_history)
         println(my_fill_history)
-
+        
+        // Dificultad Extra
+        // Caso 1: Parametros por valor
+        def byValue(a: Int, b: Int):(Int, Int) = {
+            var a_mod = a
+            var b_mod = b
+            val c = a_mod
+            a_mod = b_mod
+            b_mod = c
+            return (a_mod, b_mod)
+        }
+        
+        
     }
 }
 /*
 
 
 
-# Dificultad Extra
-# Caso 1: Parametros por valor
-def byValue(a, b):
-    c = a
-    a = b
-    b = c
-    return a, b
+
 
 
 # Caso 2: Parametros por referencia
