@@ -14,3 +14,5 @@ Cada uno de los ejercicios estan organizados por directorios.
 - #02 - FUNCIONES y ALCANCE
 - #03 - ESTRUCTURAS DE DATOS
 - #04 - CADENAS DE CARACTERES
+- #05 - VALOR Y REFERENCIA
+- #06 - RECURSIVIDAD
