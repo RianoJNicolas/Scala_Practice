@@ -28,33 +28,20 @@ object Source6 {
 
         println(calc_factorial(5))  // Imprime el factorial de 5 = 120
 
-    
+        // 2. FUNCION QUE CALCULE UN ELEMENTO EN LA SUCESIÓN DE FIBONACCI SEGUN SU POSICIÓN
+        // Secuencia -> 0, 1, 1, 2, 3, 5, 8, 13
+        // Posición ->  0, 1, 2, 3, 4, 5, 6, 7
+        def calc_fibonacci(pos:Int): Int = {
+            if(pos == 0){
+                return 0
+            }
+            else if (pos == 1) {
+                return 1
+            }
+            else {
+                return calc_fibonacci(pos-1) + calc_fibonacci(pos-2)
+            }
+        }
+        println(calc_fibonacci(6)) // Imprime el valor de la posición 6 = 8
     }
 }
-
-/*  
-
-# DIFICULTAD EXTRA:
-# 1. Factorial de un numero n
-def calc_factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n*calc_factorial(n-1)
-
-print(calc_factorial(5))  # Imprime el factorial de 5
-
-# 2. Valor de un elemento en la sucesión de Fibonacci segun su posición
-# secuencia -> 0, 1, 1, 2, 3, 5, 8, 13
-# Posición ->  0, 1, 2, 3, 4, 5, 6, 7
-def calc_fibonacci(pos):
-    if pos == 0:
-        return 0
-    elif pos == 1:
-        return 1
-    else:
-        return calc_fibonacci(pos-1) + calc_fibonacci(pos-2)
-
-print(calc_fibonacci(5))  # Imprime el valor de la posición 5
-
-*/
