@@ -7,18 +7,27 @@ object Source7 {
         // EJERCICIO
 
         // Listas como Pilas - LIFO (last in first out)
-        def stackMethod(stack: List[Int], action: String, element: Int): Unit = {
-            if (action == "push") {
-                var new_stack = stack :+ element    
-                return new_stack
+        def stackMethod(stack: List[Int], action: String, element: Int): (List[Int], Option[Int]) = {
+            action match {
+                case "push" => 
+                    var new_stack = stack :+ element
+                    (new_stack, Some(element))
+                }
+            /*else if (action == "pop") {
+                var new_stack = stack.tail
+                return (new_stack, stack.head)
             }
-            else if (action == "pop") {
+            else if (action == "peek") {
+                return (stack, stack.head)
+            }*/
                 
-                return stack
-            }
-            elif action == "peek":
-                return stack[len(stack)-1]
         }
+
+        var Mystack = List(1,2,3,4,5)
+        println(stackMethod(Mystack, "push", 6)(0))
+        //println(stackMethod(Mystack, "pop", 0))
+        //println(stackMethod(Mystack, "peek", 0))
+
         
     }
 }
