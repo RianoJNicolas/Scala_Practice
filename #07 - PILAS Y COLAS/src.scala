@@ -29,6 +29,10 @@ object Source7 {
         println(Mystack_pop)
         println(stackMethod(Mystack_pop, "peek", 0)(1))
 
-        
+        // Listas como Colas - FIFO (first in first out)
+
+        def queueMethod(queue: List[Int], action: String, element: Int): (List[Int], Int) = {
+            
+        }
     }
 }
