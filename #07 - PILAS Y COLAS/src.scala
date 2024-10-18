@@ -32,7 +32,7 @@ object Source7 {
         // Listas como Colas - FIFO (first in first out)
 
         def queueMethod(queue: List[Int], action: String, element: Int): (List[Int], Int) = {
-            
+            action match {
         }
     }
 }
