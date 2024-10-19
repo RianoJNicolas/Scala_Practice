@@ -44,9 +44,16 @@ object Source7 {
                 
                 case "peek" =>
                     (stack, stack.last)
-                }    
+            }    
         }
 
-        }
+        println("LIFO - Pilas (Stacks)")
+        var Mystack2 = List(1,2,3,4,5)
+        var Mystack2_push = stackMethod(Mystack2, "push", 6)(0)
+        println(Mystack2_push)
+        var Mystack2_pop = stackMethod(Mystack2_push, "pop", 0)(0)
+        println(Mystack2_pop)
+        println(stackMethod(Mystack2_pop, "peek", 0)(1))
+        
     }
 }
