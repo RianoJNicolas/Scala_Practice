@@ -55,5 +55,24 @@ object Source7 {
         println(Mystack2_pop)
         println(stackMethod(Mystack2_pop, "peek", 0)(1))
         
+        // Dificultad Extra
+
+        // WEB - LIFO - Pilas (Stacks)
+        def webExplorer() : Unit = {
+            println("""
+
+            Hola, soy el navegador web y
+            Estas en la pagina principal
+            
+            """)
+
+            var myStack = List()
+            while (true) {
+                print("Escribe una opcion: ")
+            }
+        }
+        webExplorer()
+
+
     }
 }
