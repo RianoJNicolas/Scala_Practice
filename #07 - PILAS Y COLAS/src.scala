@@ -30,15 +30,7 @@ object Source7 {
         println(Mystack_pop)
         println(queueMethod(Mystack_pop, "peek", 0)(1))
 
-        // Listas como Colas - FIFO (first in first out)
-
-        /* def queueMethod(queue: List[Int], action: String, element: Int): (List[Int], Int) = {
-            action match {
-                case "enqueue" =>
-                    var new_queue = element +: queue
-                    (new_queue, element)
-                
-                case "dequeue" =>
+        // Listas como Pilas - LIFO (Last in first out)
         def stackMethod(stack: List[Int], action: String, element: Int): (List[Int], Int) = {
             action match {
                 case "push" => 
@@ -46,14 +38,15 @@ object Source7 {
                     (new_stack, element)
                 
                 case "pop" => 
-                    var new_stack = stack.tail
-                    (new_stack, stack.head)
+                    val lastElement = stack.length - 1
+                    var new_stack = stack.take(lastElement)
+                    (new_stack, lastElement)
                 
                 case "peek" =>
-                    (stack, stack.head)
+                    (stack, stack.last)
                 }    
         }
 
-        }*/
+        }
     }
 }
