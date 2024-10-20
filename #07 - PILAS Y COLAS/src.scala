@@ -66,10 +66,22 @@ object Source7 {
             
             """)
 
-            var myStack = List()
+            var myStack: List[Int] = List()
             while (true) {
-                print("Escribe una opcion: ")
+                println("Ingresa una accion (adelante/atras/salir): ")
+                val accion = scala.io.StdIn.readLine()
+                
+                accion match {
+                    case "adelante" => 
+                        println("Ingresa un elemento a agregar: ")
+                        val element = scala.io.StdIn.readLine().toInt
+                        val (newStack: List[Int], element2: Int) = stackMethod(myStack, "push", element)
+                        myStack = newStack
+                        println(s"Te diriges al sitio web: $element2 ")
+                }
+            
             }
+
         }
         webExplorer()
 
