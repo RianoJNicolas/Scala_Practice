@@ -79,14 +79,19 @@ object Source7 {
                         println(s"Te diriges al sitio web: $element")
                     
                     case "atras" =>
-                        if (myStack.length > 0) {
+                        if (myStack.length > 1) {
                             val lastElement = myStack.length - 1
                             myStack = myStack.take(lastElement)
                             println(s"Te diriges a la pagina web: ${myStack.last}")
                         }
-                        else if (myStack.length == 0) {
-                            println("No puedes atrasar, no tienes ninguna pagina web en la pila")
+                        else if (myStack.length == 1) {
+                            myStack = List()
+                            println("Te diriges a la pagina principal")
                         }
+                        else if (myStack.length == 0) {
+                            println("No puedes ir mas atras, estas en la pagina principal")
+                        }
+                        
 
                 }
             
