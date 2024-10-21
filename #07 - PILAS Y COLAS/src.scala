@@ -66,18 +66,28 @@ object Source7 {
             
             """)
 
-            var myStack: List[Int] = List()
+            var myStack: List[String] = List()
             while (true) {
                 println("Ingresa una accion (adelante/atras/salir): ")
                 val accion = scala.io.StdIn.readLine()
                 
                 accion match {
                     case "adelante" => 
-                        println("Ingresa un elemento a agregar: ")
-                        val element = scala.io.StdIn.readLine().toInt
-                        val (newStack: List[Int], element2: Int) = stackMethod(myStack, "push", element)
-                        myStack = newStack
-                        println(s"Te diriges al sitio web: $element2 ")
+                        println("Ingresa la siguiente pagina web a visitar: ")
+                        val element = scala.io.StdIn.readLine()
+                        myStack = myStack :+ element
+                        println(s"Te diriges al sitio web: $element")
+                    
+                    case "atras" =>
+                        if (myStack.length > 0) {
+                            val lastElement = myStack.length - 1
+                            myStack = myStack.take(lastElement)
+                            println(s"Te diriges a la pagina web: ${myStack.last}")
+                        }
+                        else if (myStack.length == 0) {
+                            println("No puedes atrasar, no tienes ninguna pagina web en la pila")
+                        }
+
                 }
             
             }
